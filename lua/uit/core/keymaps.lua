@@ -43,6 +43,10 @@ vim.keymap.set("i", "<A-k>", "<ESC>:m .-2<CR>==gi", opts)
 vim.keymap.set("v", "<A-k>", ":m .-2<CR>gv=gv", opts)
 vim.keymap.set("v", "<A-j>", ":m .+1<CR>gv=gv", opts)
 
+-- Move text left and right
+vim.keymap.set("v", ">", ">gv", opts)
+vim.keymap.set("v", "<", "<gv", opts)
+
 -- Visual Block --
 -- Move text up and down
 -- vim.keymap.set("x", "J", ":m '>+1<CR>gv=gv", opts)
@@ -62,11 +66,11 @@ vim.keymap.set("n", "<leader>tx", ":tabclose<CR>", opts) -- close current tab
 vim.keymap.set("n", "<leader>tn", ":tabn<CR>", opts) --  go to next tab
 vim.keymap.set("n", "<leader>tp", ":tabp<CR>", opts) --  go to previous tab
 
--- horizontal scroll
-vim.keymap.set("n", "<S-h>", "20zh", opts) -- Scroll  characters to the left
-vim.keymap.set("n", "<S-l>", "20zl", opts) -- Scroll  characters to the right
-vim.keymap.set("n", "<S-j>", "10<C-d>zz", opts)
-vim.keymap.set("n", "<S-k>", "10<C-u>zz", opts)
+-- screen scroll
+-- vim.keymap.set("n", "<S-h>", "20zh", opts) -- Scroll  characters to the left
+-- vim.keymap.set("n", "<S-l>", "20zl", opts) -- Scroll  characters to the right
+-- vim.keymap.set("n", "<S-k>", "10<C-u>zz", opts)
+-- vim.keymap.set("n", "<S-j>", "10<C-d>zz", opts)
 
 ----------------------
 -- Plugin Keybinds
