@@ -27,6 +27,9 @@ vim.opt.termguicolors = true
 -- vim.opt.background = "dark"
 vim.opt.signcolumn = "yes"
 vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 60
+vim.opt.colorcolumn = "60"
+vim.opt.updatetime = 50
 
 -- backspace
 vim.opt.backspace = "indent,eol,start"
@@ -47,6 +50,3 @@ vim.opt.foldenable = false -- auto folden
 vim.opt.foldmethod = "indent" -- indent syntax
 
 
-vim.opt.updatetime = 50
-
-vim.opt.colorcolumn = "80"
