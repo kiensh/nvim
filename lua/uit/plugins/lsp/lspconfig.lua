@@ -31,13 +31,13 @@ return {
             opts.desc = "Show LSP references"
             keymap.set("n", "gr", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 
-            opts.desc = "Go to declaration"
-            -- keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
-            keymap.set("n", "gD", vim.lsp.buf.hover, opts) -- go to declaration
-
             opts.desc = "Show LSP definitions"
             -- keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
-            keymap.set("n", "gd", function () omnisharp_extended.telescope_lsp_definitions() end, opts) -- show lsp definitions
+            keymap.set("n", "gd", omnisharp_extended.telescope_lsp_definitions, opts) -- show lsp definitions
+
+            opts.desc = "Go to declaration"
+            -- keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
+            keymap.set("n", "gD", vim.lsp.buf.hover, opts)
 
             opts.desc = "Show LSP implementations"
             keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations

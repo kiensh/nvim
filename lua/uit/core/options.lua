@@ -27,8 +27,8 @@ vim.opt.termguicolors = true
 -- vim.opt.background = "dark"
 vim.opt.signcolumn = "yes"
 vim.opt.scrolloff = 8
-vim.opt.sidescrolloff = 60
-vim.opt.colorcolumn = "60"
+vim.opt.sidescrolloff = 80
+vim.opt.colorcolumn = "80"
 vim.opt.updatetime = 50
 
 -- backspace
@@ -49,4 +49,5 @@ vim.opt.isfname:append("@-@")
 vim.opt.foldenable = false -- auto folden
 vim.opt.foldmethod = "indent" -- indent syntax
 
-
+-- netrw
+vim.g.netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
