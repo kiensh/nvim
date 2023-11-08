@@ -35,7 +35,9 @@ vim.opt.updatetime = 50
 vim.opt.backspace = "indent,eol,start"
 
 -- clipboard
-vim.opt.clipboard:append("unnamedplus")
+-- vim.opt.clipboard:append("unnamedplus")
+-- vim.opt.clipboard:prepend("unnamed")
+vim.opt.clipboard:append("unnamed")
 
 -- split windows
 vim.opt.splitright = true
@@ -51,3 +53,9 @@ vim.opt.foldmethod = "indent" -- indent syntax
 
 -- netrw
 vim.g.netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
+vim.g.netrw_banner = 0
+vim.g.netrw_liststyle = 0
+-- vim.g.netrw_winsize = 25
+-- vim.g.netrw_browse_split = 4
+-- vim.g.netrw_preview = 1
+-- vim.g.netrw_altv = 0

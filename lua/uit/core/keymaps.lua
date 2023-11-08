@@ -4,7 +4,6 @@ local opts = { noremap = true, silent = true }
 
 -- general keymap
 vim.keymap.set("i", "jk", "<ESC>", opts)
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, opts)
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", opts) -- clear search highlights
 vim.keymap.set("n", "<leader>q", ":bdelete!<CR>", opts) -- clear search highlights
 
@@ -17,11 +16,10 @@ vim.keymap.set({ "n", "i" }, "<C-s>", "<ESC>:wa<CR>", opts)
 -- vim.keymap.set("i", "<C-Z>", "<ESC><C-r>a", opts)
 -- vim.keymap.set("i", "<C-o>", "<C-O>o", opts)
 -- vim.keymap.set("i", "<C-O>", "<C-O>O", opts)-- vim.keymap.set("i", "<C-O>", "<C-O>O", opts)
-vim.keymap.set("n", "<leader>rp", [[:%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>rp", [[:%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left> <BS>]])
+vim.keymap.set("n", "<leader>rP", [[:%s/<C-r>*/<C-r>*/gI<Left><Left><Left> <BS>]])
+-- vim.keymap.set("v", "<leader>rp", [[:s///gI<Left><Left><Left><Left>]])
 vim.keymap.set("v", "<leader>rp", [[:s//gI<Left><Left><Left>]])
-
-vim.keymap.set("v", "<leader>y", '"+y', opts)
-vim.keymap.set("v", "<leader>p", '"+p', opts)
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
 vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
@@ -32,9 +30,16 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
 vim.keymap.set("n", "n", "nzzzv", opts)
 vim.keymap.set("n", "N", "Nzzzv", opts)
 
+-- yank, putting
 vim.keymap.set("x", "p", '"_dP', opts)
+vim.keymap.set({ "v", "n" }, "<leader>y", '"+y', opts)
+vim.keymap.set({ "n" }, "<leader>p", '"+p', opts)
+vim.keymap.set({ "n" }, "<leader>P", '"+P', opts)
+vim.keymap.set({ "x" }, "<leader>p", '"_d"+P', opts)
+-- vim.keymap.set({ "v" }, "<leader>P", '"_d"+P', opts)
 
--- vim.keymap.set("x", "<Tab>", "gv=", opts)
+-- vim.keymap.set({ "v", "n" }, "<leader>d", '"_d', opts)
+-- vim.keymap.set({ "v", "n" }, "<leader>c", '"_c', opts)
 
 -- Move text up and down
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", opts)
@@ -66,6 +71,10 @@ vim.keymap.set("n", "<leader>to", ":tabnew<CR>", opts) -- open new tab
 vim.keymap.set("n", "<leader>tx", ":tabclose<CR>", opts) -- close current tab
 vim.keymap.set("n", "<leader>tn", ":tabn<CR>", opts) --  go to next tab
 vim.keymap.set("n", "<leader>tp", ":tabp<CR>", opts) --  go to previous tab
+
+-- netrw
+-- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, opts)
+
 
 -- screen scroll
 -- vim.keymap.set("n", "<S-h>", "20zh", opts) -- Scroll  characters to the left
