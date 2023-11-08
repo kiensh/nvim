@@ -5,7 +5,7 @@ return {
     config = function()
         local mason_nvim_dap = require("mason-nvim-dap")
 
-        local function get_debug(items, pattern)
+        local function get_debug(items, _)
             return coroutine.create(function(dap_run_co)
                 -- local items = vim.fn.globpath(vim.fn.getcwd(), pattern, 0, 1)
                 local opts = {
