@@ -1,3 +1,6 @@
 return {
-    "nvim-lua/plenary.nvim", -- lua functions that many plugins use
+  { import = "uit.plugins.colorschemes" },
+  { import = "uit.plugins" },
+  { import = "uit.plugins.lsp" },
+  { import = "uit.plugins.dap" },
 }
