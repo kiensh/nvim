@@ -6,6 +6,7 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set("i", "jk", "<ESC>", opts)
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", opts) -- clear search highlights
 vim.keymap.set("n", "<leader>q", ":bdelete!<CR>", opts) -- clear search highlights
+vim.keymap.set("n", "Q", ":%bd|e#<CR>", opts) -- clear search highlights
 
 vim.keymap.set("n", "<leader>=", "<C-a>", opts) -- increase a number
 vim.keymap.set("n", "<leader>-", "<C-x>", opts) -- decrease
@@ -73,8 +74,10 @@ vim.keymap.set("n", "<leader>tn", ":tabn<CR>", opts) --  go to next tab
 vim.keymap.set("n", "<leader>tp", ":tabp<CR>", opts) --  go to previous tab
 
 -- netrw
--- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, opts)
+vim.keymap.set("n", "<leader>e", vim.cmd.Ex, opts)
 
+-- Output the current highlights group
+-- vim.keymap.set("n", "<leader>hg", ":lua print(vim.inspect(vim.api.nvim_get_hl(0, {})))<CR>", opts)
 
 -- screen scroll
 -- vim.keymap.set("n", "<S-h>", "20zh", opts) -- Scroll  characters to the left
@@ -82,31 +85,3 @@ vim.keymap.set("n", "<leader>tp", ":tabp<CR>", opts) --  go to previous tab
 -- vim.keymap.set("n", "<S-k>", "10<C-u>zz", opts)
 -- vim.keymap.set("n", "<S-j>", "10<C-d>zz", opts)
 
-----------------------
--- Plugin Keybinds
-----------------------
-
--- nvim-maximizer
---vim.keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", opts) -- toggle split window maximization
-
--- nvim-tree
---vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
-
--- telescope
---vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts) -- find files within current working directory, respects .gitignore
---vim.keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", opts) -- find string in current working directory as you type
---vim.keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", opts) -- find string under cursor in current working directory
---vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts) -- list open buffers in current neovim instance
---vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts) -- list available help tags
-
--- telescope git commands (not on youtube nvim video, opts)
---vim.keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>", opts) -- list all git commits (use <cr> to checkout) ["gc" for git commits]
---vim.keymap.set("n", "<leader>gf", "<cmd>Telescope git_files<cr>", opts) -- list all git commits (use <cr> to checkout) ["gc" for git commits]
---vim.keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>", opts) -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
---vim.keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>", opts) -- list git branches (use <cr> to checkout) ["gb" for git branch]
---vim.keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>", opts) -- list current changes per file with diff preview ["gs" for git status]
-
--- bufferline
---vim.keymap.set("n", "<A-l>", ":bnext<CR>", opts)
---vim.keymap.set("n", "<A-h>", ":bprevious<CR>", opts)
---vim.keymap.set("n", "<C-w>", ":Bdelete<CR>", opts)
