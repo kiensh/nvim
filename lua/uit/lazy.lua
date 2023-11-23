@@ -11,16 +11,14 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
-  { import = "uit.plugins" },
-  { import = "uit.plugins.lsp" },
-}, {
-  -- install = {
-  --   colorscheme = {
-  --     "nightfly",
-  --     "tokyonight-moon",
-  --   },
-  -- },
+require("lazy").setup(require("uit.plugins"), {
+  install = {
+    colorscheme = {
+      -- "nightfly",
+      -- "tokyonight-moon",
+      "rose-pine",
+    },
+  },
   checker = {
     enabled = true,
     notify = false,
@@ -29,3 +27,8 @@ require("lazy").setup({
     notify = false,
   },
 })
+
+-- vim.cmd([[colorscheme nightfly]])
+-- vim.cmd([[colorscheme catppuccin]])
+vim.cmd([[colorscheme rose-pine]])
+-- vim.cmd([[colorscheme tokyonight]])
