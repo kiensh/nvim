@@ -10,7 +10,7 @@ return {
     "onsails/lspkind.nvim", -- vs-code like pictograms
     -- "zbirenbaum/copilot-cmp",
   },
-  config = function()
+  opts = function()
     local cmp = require("cmp")
 
     -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
@@ -26,7 +26,7 @@ return {
     -- end
     -- vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
 
-    cmp.setup({
+    return {
       completion = {
         completeopt = "menu,menuone,preview,noselect",
       },
@@ -68,6 +68,8 @@ return {
           mode = "symbol_text",
           -- symbol_map = { Copilot = "" },
         }),
+        -- fields = { "kind", "abbr", "menu" },
+        fields = { 'abbr', 'kind', 'menu' },
       },
       sorting = {
         priority_weight = 2,
@@ -91,6 +93,6 @@ return {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
       },
-    })
+    }
   end,
 }

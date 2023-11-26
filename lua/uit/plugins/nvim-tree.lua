@@ -15,18 +15,17 @@ local function on_attach(bufnr)
 
   -- use all default mappings
   api.config.mappings.default_on_attach(bufnr)
-  --
+
   -- copy default mappings here from defaults in next section
-  vim.keymap.set("n", "<", api.node.navigate.parent, opts("node.navigate.parent"))
+  vim.keymap.set("n", "h", api.node.navigate.parent, opts("node.navigate.parent"))
   -- vim.keymap.set('n', '<',    api.node.navigate.parent_close,             opts('node.navigate.parent_close'))
-  vim.keymap.set("n", ">", api.node.navigate.opened.next, opts("node.navigate.opened.next"))
+  -- vim.keymap.set("n", ">", api.node.navigate.opened.next, opts("node.navigate.opened.next"))
   vim.keymap.set("n", "?", api.tree.toggle_help, opts("Help"))
   ---
 end
 
 return {
   "nvim-tree/nvim-tree.lua",
-  -- cond = false,
   dependencies = { "nvim-tree/nvim-web-devicons" },
   opts = {
     sort_by = "case_sensitive",
