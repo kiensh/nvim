@@ -1,3 +1,7 @@
+vim.opt.undofile = true
+-- vim.opt.undodir = vim.fn.expand "~/.nvim/undofiles"
+vim.opt.undodir = vim.fn.stdpath("data") .. "/undofiles"
+
 return {
   "debugloop/telescope-undo.nvim",
   dependencies = { -- note how they're inverted to above example

@@ -1,11 +1,3 @@
-local file_exists = function(file)
-  local f = io.open(file, "rb")
-  if f then
-    f:close()
-  end
-  return f ~= nil
-end
-
 local on_format = function(bufnr)
   vim.lsp.buf.format({
     filter = function(client)
@@ -40,23 +32,6 @@ return {
   "nvimtools/none-ls.nvim", -- configure formatters & linters
   -- event = { "BufReadPre", "BufNewFile" },
   lazy = false,
-  cond = function()
-    if not file_exists(".lspconfig") then
-      print(".lspconfig file found, skipping")
-      vim.keymap.set("n", "<leader>fm", function()
-        vim.lsp.buf.format({
-          ranga = {
-            ["start"] = vim.api.nvim_buf_get_mark(0, "<"),
-            ["end"] = vim.api.nvim_buf_get_mark(0, ">"),
-          },
-          bufnr = vim.api.nvim_get_current_buf(),
-          async = true,
-        })
-      end, { noremap = true, silent = true })
-      return false
-    end
-    return true
-  end,
   dependencies = {
     "jayp0521/mason-null-ls.nvim",
   },
