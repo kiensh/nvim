@@ -13,6 +13,6 @@ return {
       -- "csharpier",
     },
     -- auto-install configured servers (with lspconfig)
-    automatic_installation = false,
+    automatic_installation = true,
   },
 }
