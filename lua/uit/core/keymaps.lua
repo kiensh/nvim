@@ -19,7 +19,7 @@ vim.keymap.set({ "n", "i" }, "<C-s>", "<ESC>:wa<CR>", opts)
 -- vim.keymap.set("i", "<C-O>", "<C-O>O", opts)-- vim.keymap.set("i", "<C-O>", "<C-O>O", opts)
 vim.keymap.set("n", "<leader>rp", [[:%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left> <BS>]])
 vim.keymap.set("n", "<leader>rP", [[:%s/<C-r>*/<C-r>*/gI<Left><Left><Left> <BS>]])
--- vim.keymap.set("v", "<leader>rp", [[:s///gI<Left><Left><Left><Left> <BS>]])
+vim.keymap.set("v", "<leader>rp", [[:s///gI<Left><Left><Left><Left> <BS>]])
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
 vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)

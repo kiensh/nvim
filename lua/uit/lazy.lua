@@ -12,13 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(require("uit.plugins"), {
-  install = {
-    colorscheme = {
-      -- "nightfly",
-      -- "tokyonight-moon",
-      "rose-pine",
-    },
-  },
   checker = {
     enabled = true,
     notify = false,
@@ -30,5 +23,5 @@ require("lazy").setup(require("uit.plugins"), {
 
 -- vim.cmd([[colorscheme nightfly]])
 -- vim.cmd([[colorscheme catppuccin]])
-vim.cmd([[colorscheme rose-pine]])
--- vim.cmd([[colorscheme tokyonight]])
+-- vim.cmd([[colorscheme rose-pine]])
+vim.cmd([[colorscheme tokyonight]])

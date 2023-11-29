@@ -13,17 +13,17 @@ return {
     dark_variant = "main",
     bold_vert_split = false,
     dim_nc_background = false,
-    disable_background = false,
-    disable_float_background = false,
+    disable_background = true,
+    disable_float_background = true,
     disable_italics = false,
 
     --- @usage string hex value or named color from rosepinetheme.com/palette
     groups = {
       background = "Normal",
       background_nc = "_experimental_nc",
-      -- panel = "surface",
-      panel = "Normal",
-      -- panel_nc = "base_nc",
+      panel = "surface",
+      -- panel = "Normal",
+      panel_nc = "base_nc",
       border = "rose",
       comment = "muted",
       link = "iris",
@@ -49,12 +49,12 @@ return {
     -- Change specific vim highlight groups
     -- https://github.com/rose-pine/neovim/wiki/Recipes
     highlight_groups = {
-      ColorColumn = { bg = "foam", blend = 0 },
+      -- ColorColumn = { bg = "foam", blend = 0 },
 
       -- Blend colours against the "base" background
-      CursorLine = { bg = "surface", blend = 75 },
+      -- CursorLine = { bg = "surface", blend = 75 },
       StatusLine = { fg = "love", bg = "love", blend = 20 },
-      StatusLineNC = { fg = "subtle", bg = "surface" },
+      StatusLineNC = { fg = "subtle", bg = "none" },
       FloatTitle = { fg = "rose", bg = "none" },
 
       -- Telescope
