@@ -1,13 +1,13 @@
 return {
-  "williamboman/mason-lspconfig.nvim",
+  'williamboman/mason-lspconfig.nvim',
   lazy = true,
   dependencies = {
-    "williamboman/mason.nvim",
+    'williamboman/mason.nvim',
   },
   opts = {
     -- list of servers for mason to install
     ensure_installed = {
-      "lua_ls",
+      'lua_ls',
       -- "html",
       -- "cssls",
       -- "tsserver",

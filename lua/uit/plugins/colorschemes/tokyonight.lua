@@ -1,17 +1,17 @@
 return {
-  "folke/tokyonight.nvim",
+  'folke/tokyonight.nvim',
   lazy = true,
   priority = 1000,
   opts = {
     transparent = true,
-    style = "night", -- "day", "night" or "moon"
+    style = 'night', -- "day", "night" or "moon"
     styles = {
       comments = { italic = true },
       keywords = { italic = true },
 
       -- Background styles. Can be "dark", "transparent" or "normal"
-      sidebars = "transparent", -- style for sidebars, see below
-      floats = "transparent", -- style for floating windows
+      sidebars = 'transparent', -- style for sidebars, see below
+      floats = 'transparent', -- style for floating windows
     },
     on_highlights = function(hl, c)
       -- hl.TSConstructor = { fg = c.green }
@@ -19,7 +19,7 @@ return {
       hl.StatusLine = { fg = c.cyan, bg = c.bg_highlight }
       hl.StatusLineNC = { fg = c.comment, bg = c.none }
       hl.NvimTreeIndentMarker = { fg = c.magenta }
-    end
+    end,
   },
 }
 

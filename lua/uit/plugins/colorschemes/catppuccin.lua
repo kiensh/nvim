@@ -1,6 +1,6 @@
 return {
-  "catppuccin/nvim",
-  name = "catppuccin",
+  'catppuccin/nvim',
+  name = 'catppuccin',
   lazy = true,
   priority = 1000,
   opts = {
@@ -18,19 +18,19 @@ return {
       native_lsp = {
         enabled = true,
         underlines = {
-          errors = { "undercurl" },
-          hints = { "undercurl" },
-          warnings = { "undercurl" },
-          information = { "undercurl" },
+          errors = { 'undercurl' },
+          hints = { 'undercurl' },
+          warnings = { 'undercurl' },
+          information = { 'undercurl' },
         },
         virtual_text = {
-          errors = { "italic" },
-          hints = { "italic" },
-          warnings = { "italic" },
-          information = { "italic" },
+          errors = { 'italic' },
+          hints = { 'italic' },
+          warnings = { 'italic' },
+          information = { 'italic' },
         },
       },
-      navic = { enabled = true, custom_bg = "lualine" },
+      navic = { enabled = true, custom_bg = 'lualine' },
       nvimtree = { enabled = true, show_root = true },
       neotest = true,
       noice = true,
