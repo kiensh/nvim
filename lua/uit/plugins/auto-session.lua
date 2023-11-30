@@ -1,10 +1,10 @@
 return {
-  "rmagatti/auto-session",
+  'rmagatti/auto-session',
   lazy = false,
   opts = {
-    log_level = "error",
+    log_level = 'error',
     auto_session_enable_last_session = false,
-    auto_session_root_dir = vim.fn.stdpath("data") .. "/sessions/",
+    auto_session_root_dir = vim.fn.stdpath('data') .. '/sessions/',
     auto_session_enabled = true,
     auto_save_enabled = true,
     auto_restore_enabled = true,
@@ -23,8 +23,14 @@ return {
     },
   },
   keys = {
-    { "<leader>sl", function() require("auto-session.session-lens").search_session() end, noremap = true },
-    { "<leader>ss", "<cmd>:SessionSave<CR>", noremap = true, silent = false },
-    { "<leader>sr", "<cmd>:SessionRestore<CR>", noremap = true, silent = false },
+    {
+      '<leader>sl',
+      function()
+        require('auto-session.session-lens').search_session()
+      end,
+      noremap = true,
+    },
+    { '<leader>ss', '<cmd>:SessionSave<CR>', noremap = true, silent = false },
+    { '<leader>sr', '<cmd>:SessionRestore<CR>', noremap = true, silent = false },
   },
 }

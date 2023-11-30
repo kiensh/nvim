@@ -2,15 +2,15 @@
 -- vim.g.rose_pine_variant = "moon"
 
 return {
-  "rose-pine/neovim",
-  name = "rose-pine",
+  'rose-pine/neovim',
+  name = 'rose-pine',
   lazy = true,
   priority = 1000,
   opts = {
     --- @usage 'auto'|'main'|'moon'|'dawn'
-    variant = "auto",
+    variant = 'auto',
     --- @usage 'main'|'moon'|'dawn'
-    dark_variant = "main",
+    dark_variant = 'main',
     bold_vert_split = false,
     dim_nc_background = false,
     disable_background = true,
@@ -19,28 +19,28 @@ return {
 
     --- @usage string hex value or named color from rosepinetheme.com/palette
     groups = {
-      background = "Normal",
-      background_nc = "_experimental_nc",
-      panel = "surface",
+      background = 'Normal',
+      background_nc = '_experimental_nc',
+      panel = 'surface',
       -- panel = "Normal",
-      panel_nc = "base_nc",
-      border = "rose",
-      comment = "muted",
-      link = "iris",
-      punctuation = "subtle",
+      panel_nc = 'base_nc',
+      border = 'rose',
+      comment = 'muted',
+      link = 'iris',
+      punctuation = 'subtle',
 
-      error = "love",
-      hint = "iris",
-      info = "foam",
-      warn = "gold",
+      error = 'love',
+      hint = 'iris',
+      info = 'foam',
+      warn = 'gold',
 
       headings = {
-        h1 = "iris",
-        h2 = "foam",
-        h3 = "rose",
-        h4 = "gold",
-        h5 = "pine",
-        h6 = "foam",
+        h1 = 'iris',
+        h2 = 'foam',
+        h3 = 'rose',
+        h4 = 'gold',
+        h5 = 'pine',
+        h6 = 'foam',
       },
       -- or set all headings at once
       -- headings = 'subtle'
@@ -53,27 +53,27 @@ return {
 
       -- Blend colours against the "base" background
       -- CursorLine = { bg = "surface", blend = 75 },
-      StatusLine = { fg = "love", bg = "love", blend = 20 },
-      StatusLineNC = { fg = "subtle", bg = "none" },
-      FloatTitle = { fg = "rose", bg = "none" },
+      StatusLine = { fg = 'love', bg = 'love', blend = 20 },
+      StatusLineNC = { fg = 'subtle', bg = 'none' },
+      FloatTitle = { fg = 'rose', bg = 'none' },
 
       -- Telescope
-      TelescopePromptTitle = { fg = "love", bg = "none" },
-      TelescopeResultsTitle = { fg = "love", bg = "none" },
-      TelescopePreviewTitle = { fg = "love", bg = "none" },
-      TelescopeResultsNormal = { fg = "subtle", bg = "none" },
-      TelescopeSelection = { fg = "love", bg = "none" },
-      TelescopeSelectionCaret = { fg = "love", bg = "none" },
+      TelescopePromptTitle = { fg = 'love', bg = 'none' },
+      TelescopeResultsTitle = { fg = 'love', bg = 'none' },
+      TelescopePreviewTitle = { fg = 'love', bg = 'none' },
+      TelescopeResultsNormal = { fg = 'subtle', bg = 'none' },
+      TelescopeSelection = { fg = 'love', bg = 'none' },
+      TelescopeSelectionCaret = { fg = 'love', bg = 'none' },
 
       -- NvimTree
-      NvimTreeNormal = { bg = "none" },
-      NvimTreeIndentMarker = { fg = "foam" },
+      NvimTreeNormal = { bg = 'none' },
+      NvimTreeIndentMarker = { fg = 'foam' },
 
       -- By default each group adds to the existing config.
       -- If you only want to set what is written in this config exactly,
       -- you can set the inherit option:
-      Search = { fg = "base", bg = "rose" },
-      CurSearch = { fg = "base", bg = "rose", inherit = false },
+      Search = { fg = 'base', bg = 'rose' },
+      CurSearch = { fg = 'base', bg = 'rose', inherit = false },
     },
   },
 }

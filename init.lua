@@ -1,3 +1,2 @@
-require("uit.core")
-require("uit.lazy")
-
+require('uit.core')
+require('uit.lazy')
