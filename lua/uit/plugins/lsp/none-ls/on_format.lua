@@ -1,16 +1,16 @@
 local on_format = function(bufnr)
-  vim.lsp.buf.format({
-    filter = function(client)
-      --  only use null-ls for formatting instead of lsp server
-      return client.name == 'null-ls'
-    end,
-    ranga = {
-      ['start'] = vim.api.nvim_buf_get_mark(0, '<'),
-      ['end'] = vim.api.nvim_buf_get_mark(0, '>'),
-    },
-    bufnr = bufnr or vim.api.nvim_get_current_buf(),
-    async = true,
-  })
+    vim.lsp.buf.format({
+        filter = function(client)
+            --  only use null-ls for formatting instead of lsp server
+            return client.name == 'null-ls'
+        end,
+        ranga = {
+            ['start'] = vim.api.nvim_buf_get_mark(0, '<'),
+            ['end'] = vim.api.nvim_buf_get_mark(0, '>'),
+        },
+        bufnr = bufnr or vim.api.nvim_get_current_buf(),
+        async = true,
+    })
 end
 
 -- to setup format on save
