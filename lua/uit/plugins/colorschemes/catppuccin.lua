@@ -1,67 +1,67 @@
 return {
-  'catppuccin/nvim',
-  name = 'catppuccin',
-  lazy = true,
-  priority = 1000,
-  opts = {
-    transparent_background = true,
-    integrations = {
-      alpha = true,
-      cmp = true,
-      flash = true,
-      gitsigns = true,
-      illuminate = true,
-      indent_blankline = { enabled = true },
-      lsp_trouble = true,
-      mason = true,
-      mini = true,
-      native_lsp = {
-        enabled = true,
-        underlines = {
-          errors = { 'undercurl' },
-          hints = { 'undercurl' },
-          warnings = { 'undercurl' },
-          information = { 'undercurl' },
+    'catppuccin/nvim',
+    name = 'catppuccin',
+    lazy = true,
+    priority = 1000,
+    opts = {
+        transparent_background = true,
+        integrations = {
+            alpha = true,
+            cmp = true,
+            flash = true,
+            gitsigns = true,
+            illuminate = true,
+            indent_blankline = { enabled = true },
+            lsp_trouble = true,
+            mason = true,
+            mini = true,
+            native_lsp = {
+                enabled = true,
+                underlines = {
+                    errors = { 'undercurl' },
+                    hints = { 'undercurl' },
+                    warnings = { 'undercurl' },
+                    information = { 'undercurl' },
+                },
+                virtual_text = {
+                    errors = { 'italic' },
+                    hints = { 'italic' },
+                    warnings = { 'italic' },
+                    information = { 'italic' },
+                },
+            },
+            navic = { enabled = true, custom_bg = 'lualine' },
+            nvimtree = { enabled = true, show_root = true },
+            neotest = true,
+            noice = true,
+            notify = true,
+            neotree = true,
+            semantic_tokens = true,
+            telescope = true,
+            treesitter = true,
+            which_key = true,
+            bufferline = true,
         },
-        virtual_text = {
-          errors = { 'italic' },
-          hints = { 'italic' },
-          warnings = { 'italic' },
-          information = { 'italic' },
-        },
-      },
-      navic = { enabled = true, custom_bg = 'lualine' },
-      nvimtree = { enabled = true, show_root = true },
-      neotest = true,
-      noice = true,
-      notify = true,
-      neotree = true,
-      semantic_tokens = true,
-      telescope = true,
-      treesitter = true,
-      which_key = true,
-      bufferline = true,
+
+        custom_highlights = function(colors)
+            return {
+                -- ColorColumn = { bg = "foam", blend = 0 },
+
+                -- Blend colours against the "base" background
+                -- CursorLine = { bg = colors.surface, blend = 75 },
+                StatusLine = { fg = colors.mauve, bg = colors.surface0 },
+                StatusLineNC = { fg = colors.surface2, bg = colors.none },
+                -- FloatTitle = { fg = colors.pink },
+
+                -- NvimTree
+                -- NvimTreeStatusLineNC = { bg = colors.none },
+                NvimTreeIndentMarker = { fg = colors.teal },
+
+                -- Search = { fg = "base", bg = colors.pink },
+                -- CurSearch = { fg = "base", bg = colors.pink, inherit = false },
+            }
+        end,
     },
-
-    custom_highlights = function(colors)
-      return {
-        -- ColorColumn = { bg = "foam", blend = 0 },
-
-        -- Blend colours against the "base" background
-        -- CursorLine = { bg = colors.surface, blend = 75 },
-        StatusLine = { fg = colors.mauve, bg = colors.surface0 },
-        StatusLineNC = { fg = colors.surface2, bg = colors.none },
-        -- FloatTitle = { fg = colors.pink },
-
-        -- NvimTree
-        -- NvimTreeStatusLineNC = { bg = colors.none },
-        NvimTreeIndentMarker = { fg = colors.teal },
-
-        -- Search = { fg = "base", bg = colors.pink },
-        -- CurSearch = { fg = "base", bg = colors.pink, inherit = false },
-      }
-    end,
-  },
 }
 
 -- local mocha = {
