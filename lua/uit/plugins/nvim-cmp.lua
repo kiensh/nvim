@@ -16,19 +16,22 @@ return {
         -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
         require('luasnip.loaders.from_vscode').lazy_load()
 
-        -- -- Tab Completion Configuration (Highly Recommended) Copilot
-        -- local has_words_before = function()
-        --     if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
-        --         return false
-        --     end
-        --     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-        --     return col ~= 0 and vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match("^%s*$") == nil
-        -- end
-        -- vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
-
         return {
             completion = {
+                -- autocomplete = true,
                 completeopt = 'menu,menuone,preview,noselect',
+                keyword_length = 3,
+            },
+            performance = {
+                max_view_entries = 100,
+            },
+            window = {
+                completion = cmp.config.window.bordered({
+                    winhighlight = 'Normal:Normal,BorderFloat:BorderBG,CursorLine:PmenuSel,Search:None',
+                }),
+                documentation = cmp.config.window.bordered({
+                    winhighlight = 'Normal:Normal,BorderFloat:BorderBG,CursorLine:PmenuSel,Search:None',
+                }),
             },
             snippet = { -- configure how nvim-cmp interacts with snippet engine
                 expand = function(args)
@@ -36,29 +39,22 @@ return {
                 end,
             },
             mapping = cmp.mapping.preset.insert({
-                -- ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
-                -- ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
+                ['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+                ['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
                 ['<C-u>'] = cmp.mapping.scroll_docs(-4),
                 ['<C-d>'] = cmp.mapping.scroll_docs(4),
                 ['<C-Space>'] = cmp.mapping.complete(), -- show completion suggestions
                 -- ["<C-e>"] = cmp.mapping.abort(), -- close completion window
                 ['<Tab>'] = cmp.mapping.confirm({ select = true }),
-                -- ["<Tab>"] = vim.schedule_wrap(function(fallback)
-                --     if cmp.visible() and has_words_before() then
-                --         cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-                --     else
-                --         fallback()
-                --     end
-                -- end),
                 ['<CR>'] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
             }),
             -- sources for autocompletion
             sources = cmp.config.sources({
-                { name = 'buffer' }, -- text within current buffer
-                { name = 'path' }, -- file system paths
-                { name = 'nvim_lsp' },
-                -- { name = "copilot" },
-                { name = 'luasnip' }, -- snippets
+                { name = 'buffer', max_item_count = 20 }, -- text within current buffer
+                { name = 'path', max_item_count = 20 }, -- file system paths
+                { name = 'nvim_lsp', max_item_count = 20 },
+                -- { name = 'copilot', max_item_count = 20 },
+                { name = 'luasnip', max_item_count = 20 }, -- snippets
             }),
             -- configure lspkind for vs-code like pictograms in completion menu
             formatting = {
@@ -66,10 +62,16 @@ return {
                     maxwidth = 50,
                     ellipsis_char = '...',
                     mode = 'symbol_text',
-                    -- symbol_map = { Copilot = "" },
+                    menu = {
+                        buffer = '[Buffer]',
+                        nvim_lsp = '[LSP]',
+                        luasnip = '[LuaSnip]',
+                        path = '[Path]',
+                        -- copilot = "[Copilot]",
+                    },
                 }),
-                -- fields = { "kind", "abbr", "menu" },
-                fields = { 'abbr', 'kind', 'menu' },
+                fields = { 'kind', 'abbr', 'menu', },
+                -- fields = { 'abbr', 'kind', 'menu' },
             },
             sorting = {
                 priority_weight = 2,
@@ -88,10 +90,6 @@ return {
                     cmp.config.compare.length,
                     cmp.config.compare.order,
                 },
-            },
-            window = {
-                completion = cmp.config.window.bordered(),
-                documentation = cmp.config.window.bordered(),
             },
         }
     end,
