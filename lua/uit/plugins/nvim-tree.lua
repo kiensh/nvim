@@ -28,8 +28,6 @@ local function on_attach(bufnr)
     vim.keymap.set('n', '<C-v>', api.fs.paste, opts('fs.paste'))
     -- vim.keymap.set('n', '<',    api.node.navigate.parent_close,             opts('node.navigate.parent_close'))
     -- vim.keymap.set("n", ">", api.node.navigate.opened.next, opts("node.navigate.opened.next"))
-    vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
-    ---
 end
 
 return {

@@ -25,3 +25,4 @@ require('lazy').setup(require('uit.plugins'), {
 -- vim.cmd([[colorscheme catppuccin]])
 vim.cmd([[colorscheme rose-pine]])
 -- vim.cmd([[colorscheme tokyonight]])
+
