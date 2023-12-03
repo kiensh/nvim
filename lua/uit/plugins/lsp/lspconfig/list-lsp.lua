@@ -1,4 +1,4 @@
-return {
+local list_lsp = {
     -- configure lua server (with special settings)
     lua_ls = {
         settings = { -- custom settings for lua
@@ -76,3 +76,21 @@ return {
         },
     },
 }
+
+local list_exclude = {
+    "html",
+    "tsserver",
+    "cssls",
+    "tailwindcss",
+    'graphql',
+    'emmet_ls',
+    -- "jsonls",
+    'angularls',
+    -- "pyright",
+    -- "omnisharp",
+}
+for _, v in pairs(list_exclude) do
+    list_lsp[v] = nil
+end
+
+return list_lsp

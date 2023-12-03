@@ -1,6 +1,6 @@
 return {
     'neovim/nvim-lspconfig',
-    -- event = { "BufReadPre", "BufNewFile" },
+    event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
         'hrsh7th/cmp-nvim-lsp',
         { 'antosha417/nvim-lsp-file-operations', config = true },
@@ -21,27 +21,11 @@ return {
         -- Change the Diagnostic symbols in the sign column (gutter)
         local signs = { Error = ' ', Warn = ' ', Hint = '󰠠 ', Info = ' ' }
         for type, icon in pairs(signs) do
-            local hl = 'DiagnosticSign' .. type
+            local hl = 'diagnosticsign' .. type
             vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
         end
 
         local list_lsp = require('uit.plugins.lsp.lspconfig.list-lsp')
-        local list_exclude = {
-            -- "html",
-            -- "tsserver",
-            -- "cssls",
-            -- "tailwindcss",
-            'graphql',
-            'emmet_ls',
-            -- "jsonls",
-            'angularls',
-            -- "pyright",
-            -- "omnisharp",
-        }
-
-        for _, v in pairs(list_exclude) do
-            list_lsp[v] = nil
-        end
 
         for k, v in pairs(list_lsp) do
             lspconfig[k].setup(v)
