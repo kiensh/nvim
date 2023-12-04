@@ -1,15 +1,22 @@
 return {
     'numToStr/Comment.nvim',
-    event = { 'BufReadPost', 'BufNewFile' },
-    -- event = "VeryLazy",
+    -- event = { 'BufReadPost', 'BufNewFile' },
     dependencies = {
         'JoosepAlviste/nvim-ts-context-commentstring',
     },
     opts = function()
-        local ts_context_commentstring = require('ts_context_commentstring.integrations.comment_nvim')
-
+        -- fix j/k position
+        require('ts_context_commentstring').setup({
+            enable_autocmd = false,
+        })
         return {
-            pre_hook = ts_context_commentstring.create_pre_hook(),
+            pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
         }
     end,
+    keys = {
+        'gcc',
+        'gbc',
+        { 'gc', mode = 'x' },
+        { 'gb', mode = 'x' },
+    },
 }
