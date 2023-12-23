@@ -75,19 +75,24 @@ local list_lsp = {
             ['textDocument/definition'] = require('omnisharp_extended').handler,
         },
     },
+
+    docker_compose_language_service = {},
+    dockerls = {},
 }
 
 local list_exclude = {
-    "html",
-    "tsserver",
-    "cssls",
-    "tailwindcss",
+    'html',
+    'tsserver',
+    'cssls',
+    'tailwindcss',
     'graphql',
     'emmet_ls',
-    -- "jsonls",
+    -- 'jsonls',
     'angularls',
-    -- "pyright",
-    -- "omnisharp",
+    -- 'pyright',
+    -- 'omnisharp',
+    -- 'docker_compose_language_service',
+    -- 'dockerls',
 }
 for _, v in pairs(list_exclude) do
     list_lsp[v] = nil

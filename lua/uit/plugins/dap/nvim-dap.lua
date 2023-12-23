@@ -28,12 +28,14 @@ return {
         local nvim_dap = vim.api.nvim_create_augroup('nvim-dap', {})
         vim.api.nvim_create_autocmd('BufWinEnter', {
             group = nvim_dap,
-            pattern = 'dap-scopes-*',
+            -- pattern = 'dap-scopes-*',
+            pattern = 'dap-*',
             callback = function()
                 local bufnr = vim.api.nvim_get_current_buf()
                 local opts = { buffer = bufnr, remap = false }
 
                 vim.keymap.set('n', '<Tab>', "<Cmd>lua require('dap.ui').trigger_actions({ mode = 'first' })<CR>", opts)
+                vim.keymap.set('n', 'q', "<Cmd>bdelete!<CR>", opts)
             end,
         })
 
