@@ -26,7 +26,9 @@ return {
                 end
 
                 local bufnr = vim.api.nvim_get_current_buf()
-                local opts = { buffer = bufnr, remap = false }
+                local opts = { buffer = bufnr, remap = false, silent = true }
+
+                vim.keymap.set('n', 'q', ':bdelete!<CR>', opts)
 
                 vim.keymap.set('n', '<leader>gp', push, opts)
 

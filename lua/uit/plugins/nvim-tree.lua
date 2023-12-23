@@ -66,14 +66,16 @@ return {
         },
         -- change folder arrow icons
         renderer = {
+            -- highlight_diagnostics = true,
+            highlight_git = true,
+            -- highlight_modified = "icon", -- "none", "icon", "name" or "all"
+            -- hightlight_opened_files ="icon", -- "none", "icon", "name" or "all" 
             indent_width = 2,
             indent_markers = {
                 enable = true,
                 inline_arrows = false,
             },
             group_empty = true,
-            -- highlight_git = true,
-            -- highlight_modified = "icon", -- "none", "icon", "name" or "all"
             icons = {
                 glyphs = {
                     folder = {
@@ -97,6 +99,11 @@ return {
         },
         git = {
             ignore = false,
+
+        },
+        diagnostics = {
+            -- enable = true,
+            show_on_dirs = true,
         },
         sync_root_with_cwd = true,
         on_attach = on_attach,

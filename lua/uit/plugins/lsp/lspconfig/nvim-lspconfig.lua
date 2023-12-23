@@ -12,6 +12,7 @@ return {
         -- import lspconfig plugin
         local lspconfig = require('lspconfig')
         -- local util = require("lspconfig.util")
+        require("lspconfig.ui.windows").default_options.border = "double"
 
         lspconfig.util.default_config = vim.tbl_extend('force', lspconfig.util.default_config, {
             on_attach = require('uit.plugins.lsp.lspconfig.on_attach'),

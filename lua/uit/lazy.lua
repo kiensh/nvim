@@ -19,10 +19,16 @@ require('lazy').setup(require('uit.plugins'), {
     change_detection = {
         notify = false,
     },
+    ui = {
+        border = "double",
+        size = {
+			width = 0.8,
+			height = 0.8,
+		},
+    },
 })
 
 -- vim.cmd([[colorscheme nightfly]])
 -- vim.cmd([[colorscheme catppuccin]])
 vim.cmd([[colorscheme rose-pine]])
 -- vim.cmd([[colorscheme tokyonight]])
-
