@@ -20,11 +20,11 @@ require('lazy').setup(require('uit.plugins'), {
         notify = false,
     },
     ui = {
-        border = "double",
+        border = 'double',
         size = {
-			width = 0.8,
-			height = 0.8,
-		},
+            width = 0.8,
+            height = 0.8,
+        },
     },
 })
 
