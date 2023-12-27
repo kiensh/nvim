@@ -81,10 +81,10 @@ local list_lsp = {
 }
 
 local list_exclude = {
-    'html',
-    'tsserver',
-    'cssls',
-    'tailwindcss',
+    -- 'html',
+    -- 'tsserver',
+    -- 'cssls',
+    -- 'tailwindcss',
     'graphql',
     'emmet_ls',
     -- 'jsonls',
