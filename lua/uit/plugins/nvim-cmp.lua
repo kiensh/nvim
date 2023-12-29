@@ -65,11 +65,11 @@ return {
                 ['<CR>'] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
             }),
             sources = cmp.config.sources(convertSources({
+                'copilot',
+                'nvim_lsp',
                 'buffer',
                 'async_path',
                 'path',
-                'nvim_lsp',
-                'copilot',
                 'luasnip',
                 'neorg',
             })),

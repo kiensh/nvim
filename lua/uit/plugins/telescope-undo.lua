@@ -12,6 +12,14 @@ return {
     },
     opts = function()
         local actions = require('telescope-undo.actions')
+        local mappings = {
+            ['ya'] = actions.yank_additions,
+            ['yd'] = actions.yank_deletions,
+            -- ['<C-cr>'] = actions.restore,
+            -- alternative defaults, for users whose terminals do questionable things with modified <cr>
+            -- ['<C-y>'] = actions.yank_deletions,
+            ['<C-r>'] = actions.restore,
+        }
         return {
             extensions = {
                 undo = {
@@ -23,19 +31,8 @@ return {
                     time_format = '',
                     saved_only = false,
                     mappings = {
-                        i = {
-                            ['<cr>'] = actions.yank_additions,
-                            ['<S-cr>'] = actions.yank_deletions,
-                            ['<C-cr>'] = actions.restore,
-                            -- alternative defaults, for users whose terminals do questionable things with modified <cr>
-                            ['<C-y>'] = actions.yank_deletions,
-                            ['<C-r>'] = actions.restore,
-                        },
-                        n = {
-                            ['y'] = actions.yank_additions,
-                            ['Y'] = actions.yank_deletions,
-                            ['u'] = actions.restore,
-                        },
+                        i = mappings,
+                        n = mappings,
                     },
                 },
             },
