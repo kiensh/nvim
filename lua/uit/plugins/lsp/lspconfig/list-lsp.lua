@@ -19,7 +19,9 @@ local list_lsp = {
     },
 
     -- configure html server
-    html = {},
+    html = {
+        filetypes = { 'html', 'typescriptreact', 'javascriptreact' },
+    },
 
     -- configure typescript server with plugin
     tsserver = {},
@@ -29,6 +31,9 @@ local list_lsp = {
 
     -- configure tailwindcss server
     tailwindcss = {},
+
+    -- configure eslint-lsp server
+    eslint = {},
 
     -- configure graphql language server
     graphql = {
@@ -85,6 +90,7 @@ local list_exclude = {
     -- 'tsserver',
     -- 'cssls',
     -- 'tailwindcss',
+    'eslint',
     'graphql',
     'emmet_ls',
     -- 'jsonls',
