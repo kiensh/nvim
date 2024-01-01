@@ -27,34 +27,34 @@ return {
         require('telescope').load_extension('harpoon')
         local harpoon_ui = require('harpoon.ui')
         return {
-            { '<M-a>', require('harpoon.mark').add_file, desc = 'Mark file with harpoon' },
-            { '<M-m>', harpoon_ui.toggle_quick_menu, desc = 'Toggle harpoon menu' },
-            { '<M-n>', harpoon_ui.nav_next, desc = 'Go to next harpoon mark' },
-            { '<M-p>', harpoon_ui.nav_prev, desc = 'Go to previous harpoon mark' },
+            { 'å', require('harpoon.mark').add_file, desc = 'Mark file with harpoon' },
+            { 'µ', harpoon_ui.toggle_quick_menu, desc = 'Toggle harpoon menu' },
+            { '˜', harpoon_ui.nav_next, desc = 'Go to next harpoon mark' },
+            { 'π', harpoon_ui.nav_prev, desc = 'Go to previous harpoon mark' },
 
             {
-                '<M-1>',
+                '¡',
                 function()
                     harpoon_ui.nav_file(1)
                 end,
                 desc = 'Navigates to file 1',
             },
             {
-                '<M-2>',
+                '™',
                 function()
                     harpoon_ui.nav_file(2)
                 end,
                 desc = 'Navigates to file 2',
             },
             {
-                '<M-3>',
+                '£',
                 function()
                     harpoon_ui.nav_file(3)
                 end,
                 desc = 'Navigates to file 3',
             },
             {
-                '<M-4>',
+                '¢',
                 function()
                     harpoon_ui.nav_file(4)
                 end,

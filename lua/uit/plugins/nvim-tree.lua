@@ -36,7 +36,7 @@ local function on_attach(bufnr)
     vim.keymap.set('n', 'x', api.fs.cut, opts('fs.cut'))
     vim.keymap.set('n', 'y', api.fs.copy.node, opts('fs.copy.node'))
     vim.keymap.set('n', 'p', api.fs.paste, opts('fs.paste'))
-    vim.keymap.set('n', '<M-c>', api.fs.copy.absolute_path, opts('fs.copy.absolute_path'))
+    vim.keymap.set('n', 'ç', api.fs.copy.absolute_path, opts('fs.copy.absolute_path'))
 
     --- @file-system
     vim.keymap.set('n', 'a', api.fs.create, opts('fs.create'))
@@ -109,12 +109,6 @@ return {
         on_attach = on_attach,
     },
     keys = {
-        -- { "<leader>e", "<cmd>NvimTreeFindFileToggle<CR>", desc = "Toggle file explorer on current file" }, -- toggle file explorer on current file
-        -- { "<leader>ee", "<cmd>NvimTreeToggle<CR>", desc = "Toggle file explorer" },               -- toggle file explorerm
         { '<leader>e', '<cmd>NvimTreeFindFile<CR>', desc = 'Find file explorer on current file' }, -- toggle file explorer on current filem
-        -- { "<A-c>", require("nvim-tree.api").fs.copy.absolute_path, desc = "Toggle file explorer on current file" }, -- toggle file explorer on current filem
-        -- { "<leader>ec", "<cmd>NvimTreeCollapse<CR>", desc = "Collapse file explorer" },           -- collapse file explorerm
-        -- { "<leader>ec", "<cmd>NvimTreeCollapse<CR>", desc = "Collapse file explorer" },           -- collapse file explorerm
-        -- { "<leader>er", "<cmd>NvimTreeRefresh<CR>", desc = "Refresh file explorer" },             -- refresh file explorerm
     },
 }

@@ -42,12 +42,12 @@ vim.keymap.set({ 'x' }, '<leader>p', '"_d"+P', opts)
 -- vim.keymap.set({ "v", "n" }, "<leader>c", '"_c', opts)
 
 -- Move text up and down
-vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', opts)
-vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', opts)
-vim.keymap.set('i', '<A-j>', '<ESC>:m .+1<CR>==gi', opts)
-vim.keymap.set('i', '<A-k>', '<ESC>:m .-2<CR>==gi', opts)
-vim.keymap.set('v', '<A-k>', ':m .-2<CR>gv=gv', opts)
-vim.keymap.set('v', '<A-j>', ':m .+1<CR>gv=gv', opts)
+vim.keymap.set('n', '∆', ':m .+1<CR>==', opts)
+vim.keymap.set('n', '˚', ':m .-2<CR>==', opts)
+vim.keymap.set('i', '∆', '<ESC>:m .+1<CR>==gi', opts)
+vim.keymap.set('i', '˚', '<ESC>:m .-2<CR>==gi', opts)
+vim.keymap.set('v', '∆', ':m .+1<CR>gv=gv', opts)
+vim.keymap.set('v', '˚', ':m .-2<CR>gv=gv', opts)
 
 -- Move text left and right
 vim.keymap.set('v', '>', '>gv', opts)
@@ -57,8 +57,8 @@ vim.keymap.set('v', '<', '<gv', opts)
 -- Move text up and down
 -- vim.keymap.set("x", "J", ":m '>+1<CR>gv=gv", opts)
 -- vim.keymap.set("x", "K", ":m '<-2<CR>gv=gv", opts)
-vim.keymap.set('x', '<A-j>', ":m '>+1<CR>gv=gv", opts)
-vim.keymap.set('x', '<A-k>', ":m '<-2<CR>gv=gv", opts)
+vim.keymap.set('x', '∆', ":m '>+1<CR>gv=gv", opts)
+vim.keymap.set('x', '˚', ":m '<-2<CR>gv=gv", opts)
 
 -- screen management
 vim.keymap.set('n', '<leader>sv', ':vert split<CR>', opts) -- split window vertically
