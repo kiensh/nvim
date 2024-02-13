@@ -1,7 +1,7 @@
 return {
-    'zbirenbaum/copilot.lua',
-    cmd = 'Copilot',
-    event = 'InsertEnter',
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
     opts = {
         -- panel = {
         --     enabled = true, -- copilot-cmp
@@ -22,12 +22,12 @@ return {
             auto_trigger = true,
             debounce = 75,
             keymap = {
-                accept = '¬',
+                accept = "¬",
                 accept_word = false,
                 accept_line = false,
-                next = '‘',
-                prev = '“',
-                dismiss = '<C-]>',
+                next = "‘",
+                prev = "“",
+                dismiss = "<C-]>",
             },
         },
         filetypes = {
@@ -39,10 +39,10 @@ return {
             hgcommit = false,
             svn = false,
             cvs = false,
-            ['.'] = false,
+            ["."] = false,
         },
         -- copilot_node_command = "node", -- Node.js version must be > 16.x
-        copilot_node_command = vim.fn.expand('$HOME') .. '/.nvm/versions/node/v20.10.0/bin/node', -- Node.js version must be > 18.x
+        copilot_node_command = vim.fn.expand("$HOME") .. "/.nvm/versions/node/v20.10.0/bin/node", -- Node.js version must be > 18.x
         -- server_opts_overrides = {},
         --
     },

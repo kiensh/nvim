@@ -5,13 +5,13 @@ local list_lsp = {
             Lua = {
                 -- make the language server recognize "vim" global
                 diagnostics = {
-                    globals = { 'vim' },
+                    globals = { "vim" },
                 },
                 workspace = {
                     -- make language server aware of runtime files
                     library = {
-                        [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-                        [vim.fn.stdpath('config') .. '/lua'] = true,
+                        [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                        [vim.fn.stdpath("config") .. "/lua"] = true,
                     },
                 },
             },
@@ -20,7 +20,7 @@ local list_lsp = {
 
     -- configure html server
     html = {
-        filetypes = { 'html', 'typescriptreact', 'javascriptreact' },
+        filetypes = { "html", "typescriptreact", "javascriptreact" },
     },
 
     -- configure typescript server with plugin
@@ -37,12 +37,12 @@ local list_lsp = {
 
     -- configure graphql language server
     graphql = {
-        filetypes = { 'graphql', 'gql', 'svelte', 'typescriptreact', 'javascriptreact' },
+        filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
     },
 
     -- configure emmet language server
     emmet_ls = {
-        filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'svelte' },
+        filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
     },
 
     -- configure jsonls server
@@ -59,9 +59,9 @@ local list_lsp = {
                     autoImportCompletions = true,
                     autoSearchPaths = true,
                     useLibraryCodeForTypes = true,
-                    diagnosticMode = 'openFilesOnly',
-                    pythonPath = vim.fn.exepath('python3'),
-                    venvPath = '/home/uit/miniconda3/envs',
+                    diagnosticMode = "openFilesOnly",
+                    pythonPath = vim.fn.exepath("python3"),
+                    venvPath = "/home/uit/miniconda3/envs",
                 },
             },
         },
@@ -70,14 +70,14 @@ local list_lsp = {
     -- configure omnisharp_mono server ----------- omnisharp_mono only for window
     -- configure omnisharp server
     omnisharp = {
-        cmd = { 'dotnet', vim.fn.stdpath('data') .. '/mason/packages/omnisharp/libexec/OmniSharp.dll' },
+        cmd = { "dotnet", vim.fn.stdpath("data") .. "/mason/packages/omnisharp/libexec/OmniSharp.dll" },
         enable_editorconfig_support = true,
         enable_roslyn_analyzers = true,
         organize_imports_on_format = true,
         enable_import_completion = true,
         enable_ms_build_load_projects_on_demand = false,
         handlers = {
-            ['textDocument/definition'] = require('omnisharp_extended').handler,
+            ["textDocument/definition"] = require("omnisharp_extended").handler,
         },
     },
 
@@ -89,13 +89,13 @@ local list_exclude = {
     -- 'html',
     -- 'tsserver',
     -- 'cssls',
-    'tailwindcss',
-    'eslint',
-    'graphql',
-    'emmet_ls',
+    "tailwindcss",
+    "eslint",
+    "graphql",
+    "emmet_ls",
     -- 'jsonls',
-    'angularls',
-    'pyright',
+    "angularls",
+    "pyright",
     -- 'omnisharp',
     -- 'docker_compose_language_service',
     -- 'dockerls',
