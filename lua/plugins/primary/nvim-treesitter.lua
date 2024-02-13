@@ -1,8 +1,8 @@
 return {
     {
-        'nvim-treesitter/nvim-treesitter',
-        event = { 'BufReadPre', 'BufNewFile' },
-        build = ':TSUpdate',
+        "nvim-treesitter/nvim-treesitter",
+        event = { "BufReadPre", "BufNewFile" },
+        build = ":TSUpdate",
         opts = {
             -- enable syntax highlighting
             highlight = {
@@ -14,10 +14,10 @@ return {
             autotag = { enable = true },
             -- ensure these language parsers are installed
             ensure_installed = {
-                'lua',
-                'vim',
+                "lua",
+                "vim",
             },
-            ignore_install = { 'help' },
+            ignore_install = { "help" },
             -- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
             context_commentstring = {
                 enable = true,
@@ -27,5 +27,5 @@ return {
             auto_install = false,
         },
     },
-    { 'windwp/nvim-ts-autotag', ft = { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact' } },
+    { "windwp/nvim-ts-autotag", ft = { "typescript", "javascript", "typescriptreact", "javascriptreact" } },
 }

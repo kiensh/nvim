@@ -1,9 +1,9 @@
 return {
-    'mg979/vim-visual-multi',
+    "mg979/vim-visual-multi",
     -- event = { "BufReadPost", "BufNewFile" },
     keys = {
-        { '<C-n>', mode = { 'n', 'v' } },
-        '<C-Down>',
-        '<C-Up>',
+        { "<C-n>", mode = { "n", "v" } },
+        "<C-Down>",
+        "<C-Up>",
     },
 }

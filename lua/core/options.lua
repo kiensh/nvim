@@ -23,39 +23,39 @@ vim.opt.cursorline = true
 -- vim.opt.guicursor = ""
 -- vim.opt.guicursor = "n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor"
 -- vim.opt.guicursor = "n-v-c:block-Cursor,i-ci:ver25-Cursor,r-cr:hor20-Cursor"
-vim.cmd('au VimLeave * set guicursor=a:hor20-Cursor/lCursor-blinkon0')
+vim.cmd("au VimLeave * set guicursor=a:hor20-Cursor/lCursor-blinkon0")
 
 -- appearance
 -- vim.opt.termguicolors = true
 -- vim.opt.background = "dark"
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 80
-vim.opt.colorcolumn = '80'
+vim.opt.colorcolumn = "80"
 vim.opt.updatetime = 50
 
 -- backspace
-vim.opt.backspace = 'indent,eol,start'
+vim.opt.backspace = "indent,eol,start"
 
 -- clipboard
 -- vim.opt.clipboard:append("unnamedplus")
 -- vim.opt.clipboard:prepend("unnamed")
-vim.opt.clipboard:append('unnamed')
+vim.opt.clipboard:append("unnamed")
 
 -- split windows
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 -- add keywords
-vim.opt.iskeyword:append('-')
-vim.opt.isfname:append('@-@')
+vim.opt.iskeyword:append("-")
+vim.opt.isfname:append("@-@")
 
 -- fold
 vim.opt.foldenable = false -- auto folden
-vim.opt.foldmethod = 'indent' -- indent syntax
+vim.opt.foldmethod = "indent" -- indent syntax
 
 -- netrw
-vim.g.netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
+vim.g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 -- vim.g.netrw_banner = 1
 -- vim.g.netrw_liststyle = 3
 -- vim.g.netrw_winsize = 25

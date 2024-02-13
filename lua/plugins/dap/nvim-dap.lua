@@ -35,7 +35,7 @@ return {
                 local bufnr = vim.api.nvim_get_current_buf()
                 local opts = { buffer = bufnr, remap = false }
 
-                vim.keymap.set("n", "<Tab>", "<Cmd>lua require(\"dap.ui\").trigger_actions({ mode = \"first\" })<CR>", opts)
+                vim.keymap.set("n", "<Tab>", '<Cmd>lua require("dap.ui").trigger_actions({ mode = "first" })<CR>', opts)
                 vim.keymap.set("n", "q", "<Cmd>bdelete!<CR>", opts)
             end,
         })
