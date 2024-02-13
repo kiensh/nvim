@@ -3,47 +3,29 @@ return {
     cmd = "Copilot",
     event = "InsertEnter",
     opts = {
-        -- panel = {
-        --     enabled = true, -- copilot-cmp
-        --     keymap = {
-        --         jump_prev = '[[',
-        --         jump_next = ']]',
-        --         accept = '<CR>',
-        --         refresh = 'gr',
-        --         open = '<A-CR>',
-        --     },
-        --     layout = {
-        --         position = 'bottom', -- | top | left | right
-        --         ratio = 0.4,
-        --     },
-        -- },
         suggestion = {
-            enabled = true, -- copilot-cmp
+            enabled = true,
             auto_trigger = true,
             debounce = 75,
             keymap = {
-                accept = "¬",
+                accept = "<C-l>",
                 accept_word = false,
                 accept_line = false,
-                next = "‘",
-                prev = "“",
-                dismiss = "<C-]>",
+                next = "<C-]>",
+                prev = "<C-[>",
             },
         },
         filetypes = {
             yaml = true,
-            markdown = false,
+            markdown = true,
             help = false,
-            gitcommit = false,
-            gitrebase = false,
+            gitcommit = true,
+            gitrebase = true,
             hgcommit = false,
             svn = false,
             cvs = false,
-            ["."] = false,
+            ["."] = true,
         },
-        -- copilot_node_command = "node", -- Node.js version must be > 16.x
-        copilot_node_command = vim.fn.expand("$HOME") .. "/.nvm/versions/node/v20.10.0/bin/node", -- Node.js version must be > 18.x
-        -- server_opts_overrides = {},
-        --
+        copilot_node_command = "node", -- Node.js version must be > 16.x
     },
 }
