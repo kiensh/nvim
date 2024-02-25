@@ -49,7 +49,7 @@ local list_lsp = {
     },
 
     -- configure jsonls server
-    jsonls = { enabled = true, },
+    jsonls = { enabled = false, },
 
     -- configure angularls server
     angularls = { enabled = false, },
@@ -73,7 +73,7 @@ local list_lsp = {
 
     -- configure omnisharp server
     omnisharp = {
-        enabled = true,
+        enabled = false,
         cmd = { "dotnet", vim.fn.stdpath("data") .. "/mason/packages/omnisharp/libexec/OmniSharp.dll" },
         enable_editorconfig_support = true,
         enable_roslyn_analyzers = true,
