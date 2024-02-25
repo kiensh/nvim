@@ -20,15 +20,15 @@ local list_lsp = {
 
     -- configure html server
     html = {
-        enabled = true,
+        enabled = false,
         filetypes = { "html", "typescriptreact", "javascriptreact" },
     },
 
     -- configure typescript server with plugin
-    tsserver = { enabled = true, },
+    tsserver = { enabled = false, },
 
     -- configure css server
-    cssls = { enabled = true, },
+    cssls = { enabled = false, },
 
     -- configure tailwindcss server
     tailwindcss = { enabled = false, },
