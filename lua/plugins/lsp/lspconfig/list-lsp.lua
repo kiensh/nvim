@@ -20,39 +20,43 @@ local list_lsp = {
 
     -- configure html server
     html = {
+        enabled = true,
         filetypes = { "html", "typescriptreact", "javascriptreact" },
     },
 
     -- configure typescript server with plugin
-    tsserver = {},
+    tsserver = { enabled = true, },
 
     -- configure css server
-    cssls = {},
+    cssls = { enabled = true, },
 
     -- configure tailwindcss server
-    tailwindcss = {},
+    tailwindcss = { enabled = false, },
 
     -- configure eslint-lsp server
-    eslint = {},
+    eslint = { enabled = false, },
 
     -- configure graphql language server
     graphql = {
+        enabled = false,
         filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
     },
 
     -- configure emmet language server
     emmet_ls = {
+        enabled = false,
         filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
     },
 
     -- configure jsonls server
-    jsonls = {},
+    jsonls = { enabled = true, },
 
     -- configure angularls server
-    angularls = {},
+    angularls = { enabled = false, },
 
     -- configure python server
     pyright = {
+        enabled = false,
         settings = {
             python = {
                 analysis = {
@@ -67,9 +71,9 @@ local list_lsp = {
         },
     },
 
-    -- configure omnisharp_mono server ----------- omnisharp_mono only for window
     -- configure omnisharp server
     omnisharp = {
+        enabled = true,
         cmd = { "dotnet", vim.fn.stdpath("data") .. "/mason/packages/omnisharp/libexec/OmniSharp.dll" },
         enable_editorconfig_support = true,
         enable_roslyn_analyzers = true,
@@ -81,27 +85,17 @@ local list_lsp = {
         },
     },
 
-    docker_compose_language_service = {},
-    dockerls = {},
+    -- configure docker_compose
+    docker_compose_language_service = { enabled = false, },
+
+    -- configure docker
+    dockerls = { enabled = false, },
 }
 
-local list_exclude = {
-    -- 'html',
-    -- 'tsserver',
-    -- 'cssls',
-    "tailwindcss",
-    "eslint",
-    "graphql",
-    "emmet_ls",
-    -- 'jsonls',
-    "angularls",
-    "pyright",
-    -- 'omnisharp',
-    -- 'docker_compose_language_service',
-    -- 'dockerls',
-}
-for _, v in pairs(list_exclude) do
-    list_lsp[v] = nil
+for k, v in pairs(list_lsp) do
+    if v.enabled == false then
+        list_lsp[k] = nil
+    end
 end
 
 return list_lsp
