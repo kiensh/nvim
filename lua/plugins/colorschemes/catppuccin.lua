@@ -48,7 +48,7 @@ return {
                 -- ColorColumn = { bg = "foam", blend = 0 },
 
                 -- Blend colours against the "base" background
-                -- CursorLine = { bg = colors.surface, blend = 75 },
+                CursorLine = { bg = colors.surface, blend = 75 },
                 StatusLine = { fg = colors.green, bg = colors.surface0 },
                 StatusLineNC = { fg = colors.surface2, bg = colors.none },
                 -- FloatTitle = { fg = colors.pink },
