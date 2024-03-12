@@ -31,10 +31,10 @@ local list_lsp = {
     cssls = { enabled = false, },
 
     -- configure tailwindcss server
-    tailwindcss = { enabled = false, },
+    tailwindcss = { enabled = false },
 
     -- configure eslint-lsp server
-    eslint = { enabled = false, },
+    eslint = { enabled = false },
 
     -- configure graphql language server
     graphql = {
@@ -52,7 +52,7 @@ local list_lsp = {
     jsonls = { enabled = false, },
 
     -- configure angularls server
-    angularls = { enabled = false, },
+    angularls = { enabled = false },
 
     -- configure python server
     pyright = {
@@ -86,10 +86,35 @@ local list_lsp = {
     },
 
     -- configure docker_compose
-    docker_compose_language_service = { enabled = false, },
+    docker_compose_language_service = { enabled = false },
 
     -- configure docker
-    dockerls = { enabled = false, },
+    dockerls = { enabled = false },
+
+    -- configure dart
+    dartls = {
+        enabled = false,
+        init_options = {
+            onlyAnalyzeProjectsWithOpenFiles = false,
+            suggestFromUnimportedLibraries = true,
+            closingLabels = true,
+            outline = false,
+            flutterOutline = false,
+        },
+        settings = {
+            dart = {
+                analysisExcludedFolders = {
+                    vim.fn.expand("$HOME/AppData/Local/Pub/Cache"),
+                    vim.fn.expand("$HOME/.pub-cache"),
+                    vim.fn.expand("/opt/homebrew/"),
+                    vim.fn.expand("$HOME/tools/flutter/"),
+                },
+                updateImportsOnRename = true,
+                completeFunctionCalls = true,
+                showTodos = true,
+            },
+        },
+    },
 }
 
 for k, v in pairs(list_lsp) do
