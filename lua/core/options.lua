@@ -19,7 +19,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- cursor line
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 -- vim.opt.guicursor = ""
 -- vim.opt.guicursor = "n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor"
 -- vim.opt.guicursor = "n-v-c:block-Cursor,i-ci:ver25-Cursor,r-cr:hor20-Cursor"
@@ -56,6 +56,7 @@ vim.opt.foldmethod = "indent" -- indent syntax
 
 -- netrw
 vim.g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
+-- vim.g.netrw_keepdir=0 -- path error
 -- vim.g.netrw_banner = 1
 -- vim.g.netrw_liststyle = 3
 -- vim.g.netrw_winsize = 25

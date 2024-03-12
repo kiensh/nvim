@@ -52,7 +52,6 @@ return {
             -- ColorColumn = { bg = "foam", blend = 0 },
 
             -- Blend colours against the "base" background
-            CursorLine = { bg = "none" },
             StatusLine = { fg = "love", bg = "love", blend = 20 },
             StatusLineNC = { fg = "subtle", bg = "none" },
             FloatTitle = { fg = "rose", bg = "none" },
