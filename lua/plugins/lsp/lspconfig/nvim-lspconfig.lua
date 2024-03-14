@@ -23,7 +23,6 @@ return {
         "hrsh7th/cmp-nvim-lsp",
         "williamboman/mason-lspconfig.nvim",
         "Hoffs/omnisharp-extended-lsp.nvim",
-        "j-hui/fidget.nvim",
     },
     config = function()
         local lspconfig = require("lspconfig")
