@@ -22,13 +22,18 @@ return {
     opts = {
         defaults = {
             path_display = { "truncate" },
-            layout_strategy = "horizontal",
+            layout_strategy = "vertical",
             layout_config = {
-                height = 0.9,
                 preview_cutoff = 1,
                 prompt_position = "bottom",
                 width = 0.8,
             },
+          mappings = {
+            i = {
+              ["<C-j>"] = require('telescope.actions').move_selection_next,
+              ["<C-k>"] = require('telescope.actions').move_selection_previous,
+            },
+          },
         },
         extensions = {
             fzf = {
