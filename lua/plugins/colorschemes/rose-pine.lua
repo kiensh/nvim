@@ -73,6 +73,9 @@ return {
             -- you can set the inherit option:
             Search = { fg = "base", bg = "rose" },
             CurSearch = { fg = "base", bg = "rose", inherit = false },
+
+            -- Trouble
+            TroubleNormal = { fg = "text", bg = "none" },
         },
     },
 }
