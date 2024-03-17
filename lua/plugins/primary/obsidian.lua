@@ -2,7 +2,10 @@ vim.opt.conceallevel = 1
 
 return {
     "epwalsh/obsidian.nvim",
-    event = "VeryLazy",
+    event = {
+        "BufReadPre " .. vim.fn.expand("~") .. "/notes/**",
+        "BufNewFile " .. vim.fn.expand("~") .. "/notes/**",
+    },
     dependencies = {
         "nvim-lua/plenary.nvim",
         "hrsh7th/nvim-cmp",
@@ -35,5 +38,8 @@ return {
                 insert_link = "<C-l>",
             },
         },
+        follow_url_func = function(url)
+            vim.fn.jobstart({ "open", url })
+        end,
     },
 }
