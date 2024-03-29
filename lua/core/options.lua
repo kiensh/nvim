@@ -64,3 +64,7 @@ vim.g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 -- vim.g.netrw_browse_split = 1
 -- vim.g.netrw_preview = 1
 -- vim.g.netrw_altv = 0
+
+-- highlight on yank
+vim.cmd("au TextYankPost * silent! lua vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 200 })")
+
