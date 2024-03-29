@@ -4,6 +4,7 @@ local opts = { noremap = true, silent = true }
 
 -- general keymap
 vim.keymap.set("i", "jk", "<ESC>", opts)
+vim.keymap.set("i", "<ESC>", "<ESC>", opts)
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", opts) -- clear search highlights
 vim.keymap.set("n", "<leader>q", ":bdelete!<CR>", opts)
 vim.keymap.set("n", "Q", ":%bd|e#<CR>", opts)

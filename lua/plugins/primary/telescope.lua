@@ -28,13 +28,13 @@ return {
                 prompt_position = "bottom",
                 width = 0.8,
             },
-          mappings = {
-            i = {
-              ["<C-j>"] = require('telescope.actions').move_selection_next,
-              ["<C-k>"] = require('telescope.actions').move_selection_previous,
-              ["<ESC>"] = require('telescope.actions').close,
+            mappings = {
+                i = {
+                    ["<C-j>"] = require("telescope.actions").move_selection_next,
+                    ["<C-k>"] = require("telescope.actions").move_selection_previous,
+                    ["<ESC>"] = require("telescope.actions").close,
+                },
             },
-          },
         },
         extensions = {
             fzf = {
