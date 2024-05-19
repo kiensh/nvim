@@ -38,11 +38,6 @@ vim.opt.updatetime = 50
 -- backspace
 vim.opt.backspace = "indent,eol,start"
 
--- clipboard
--- vim.opt.clipboard:append("unnamedplus")
--- vim.opt.clipboard:prepend("unnamed")
-vim.opt.clipboard:append("unnamed")
-
 -- split windows
 vim.opt.splitright = true
 vim.opt.splitbelow = true
