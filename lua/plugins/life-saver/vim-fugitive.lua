@@ -15,10 +15,8 @@ return {
         -- { "<leader>g", "<cmd>Git<CR>" },
     },
     config = function()
-        local ThePrimeagen_Fugitive = vim.api.nvim_create_augroup("ThePrimeagen_Fugitive", {})
 
         vim.api.nvim_create_autocmd("BufWinEnter", {
-            group = ThePrimeagen_Fugitive,
             pattern = "*",
             callback = function()
                 if vim.bo.ft ~= "fugitive" then

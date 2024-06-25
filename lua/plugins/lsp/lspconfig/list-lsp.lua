@@ -117,6 +117,21 @@ local list_lsp = {
     },
 }
 
+vim.api.nvim_create_autocmd({ "BufWinEnter", "BufReadPost" }, {
+    pattern = {
+        "*.dart",
+        "*.js",
+        "*.jsx",
+        "*.ts",
+        "*.tsx",
+    },
+    callback = function()
+        vim.opt.shiftwidth = 2
+        vim.opt.tabstop = 2
+        vim.opt.softtabstop = 2
+    end,
+})
+
 for k, v in pairs(list_lsp) do
     if v.enabled == false then
         list_lsp[k] = nil
