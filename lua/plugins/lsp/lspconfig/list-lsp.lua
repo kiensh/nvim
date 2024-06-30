@@ -85,12 +85,6 @@ local list_lsp = {
         },
     },
 
-    -- configure docker_compose
-    docker_compose_language_service = { enabled = false },
-
-    -- configure docker
-    dockerls = { enabled = false },
-
     -- configure dart
     dartls = {
         enabled = false,
@@ -115,6 +109,7 @@ local list_lsp = {
             },
         },
     },
+
 }
 
 vim.api.nvim_create_autocmd({ "BufWinEnter", "BufReadPost" }, {
