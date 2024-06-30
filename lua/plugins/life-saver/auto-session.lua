@@ -1,6 +1,7 @@
 return {
     "rmagatti/auto-session",
     lazy = false,
+    enabled = MY_OS ~= "windows",
     keys = {
         {
             "<leader>sl",

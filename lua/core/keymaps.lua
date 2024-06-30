@@ -1,91 +1,73 @@
-vim.g.mapleader = " "
-
-local opts = { noremap = true, silent = true }
+local keymap = function(mode, key, value)
+    local opts = { noremap = true, silent = true }
+    vim.keymap.set(mode, key, value, opts)
+end
 
 -- general keymap
-vim.keymap.set("i", "jk", "<ESC>", opts)
-vim.keymap.set("i", "<ESC>", "<ESC>", opts)
-vim.keymap.set("n", "<leader>nh", ":nohl<CR>", opts) -- clear search highlights
-vim.keymap.set("n", "<leader>q", ":bdelete!<CR>", opts)
-vim.keymap.set("n", "Q", ":%bd|e#<CR>", opts)
+vim.g.mapleader = KEYS.space
+keymap("i", KEYS.j.k, [[<ESC>]])
+keymap("i", KEYS.escape, [[<ESC>]])
+keymap("n", KEYS.leader.n.h, [[:nohl<CR>]])
+keymap("n", KEYS.leader.q, [[:bdelete!<CR>]])
+keymap("n", KEYS.Q, [[:%bd|e#<CR>]])
 
--- vim.keymap.set('n', '<leader>=', '<C-a>', opts) -- increase a number
--- vim.keymap.set('n', '<leader>-', '<C-x>', opts) -- decrease
+-- keymap("n", "<leader>=", [[<C-a>]]) -- increase a number
+-- keymap("n", "<leader>-", [[<C-x>]]) -- decrease
 
-vim.keymap.set({ "n", "i" }, "<C-s>", "<ESC>:wa<CR>", opts)
-vim.keymap.set("n", "<leader>rp", [[:%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left> <BS>]])
-vim.keymap.set("n", "<leader>rP", [[:%s/<C-r>*/<C-r>*/gI<Left><Left><Left> <BS>]])
-vim.keymap.set("v", "<leader>rp", [[:s///gI<Left><Left><Left><Left> <BS>]])
+keymap({ "n", "i" }, KEYS.ctrl.s, [[<ESC>:wa<CR>]])
+keymap("n", KEYS.leader.r.p, [[:%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left> <BS>]])
+keymap("n", KEYS.leader.r.P, [[:%s/<C-r>*/<C-r>*/gI<Left><Left><Left> <BS>]])
+keymap("v", KEYS.leader.r.p, [[:s///gI<Left><Left><Left><Left> <BS>]])
 
-vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
-vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
+keymap("n", KEYS.ctrl.d, [[<C-d>zz]])
+keymap("n", KEYS.ctrl.u, [[<C-u>zz]])
 
--- vim.keymap.set("n", "w", "w2zl", opts)
--- vim.keymap.set("n", "b", "b2zh", opts)
-
-vim.keymap.set("n", "n", "nzzzv", opts)
-vim.keymap.set("n", "N", "Nzzzv", opts)
+keymap("n", KEYS.n, [[nzzzv]])
+keymap("n", KEYS.N, [[Nzzzv]])
 
 -- yank, putting
-vim.keymap.set("x", "p", '"_dP', opts)
-vim.keymap.set({ "v", "n" }, "<leader>y", '"+y', opts)
-vim.keymap.set({ "n" }, "<leader>p", '"+p', opts)
-vim.keymap.set({ "n" }, "<leader>P", '"+P', opts)
-vim.keymap.set({ "x" }, "<leader>p", '"_d"+P', opts)
--- vim.keymap.set({ "v" }, "<leader>P", '"_d"+P', opts)
-
--- vim.keymap.set({ "v", "n" }, "<leader>d", '"_d', opts)
--- vim.keymap.set({ "v", "n" }, "<leader>c", '"_c', opts)
+keymap("x", KEYS.p, [["_dP]])
+keymap({ "v", "n" }, KEYS.leader.y, [["+y]])
+keymap({ "n" }, KEYS.leader.p, [["+p]])
+keymap({ "n" }, KEYS.leader.P, [["+P]])
+keymap({ "x" }, KEYS.leader.p, [["_d"+P]])
 
 -- Move text up and down
-vim.keymap.set("n", "∆", ":m .+1<CR>==", opts)
-vim.keymap.set("n", "˚", ":m .-2<CR>==", opts)
-vim.keymap.set("i", "∆", "<ESC>:m .+1<CR>==gi", opts)
-vim.keymap.set("i", "˚", "<ESC>:m .-2<CR>==gi", opts)
-vim.keymap.set("v", "∆", ":m .+1<CR>gv=gv", opts)
-vim.keymap.set("v", "˚", ":m .-2<CR>gv=gv", opts)
+keymap("n", KEYS.alt.j, [[:m .+1<CR>==]])
+keymap("n", KEYS.alt.k, [[:m .-2<CR>==]])
+keymap("x", KEYS.alt.j, [[:m '>+1<CR>gv=gv]])
+keymap("x", KEYS.alt.k, [[:m '<-2<CR>gv=gv]])
 
 -- Move text left and right
-vim.keymap.set("v", ">", ">gv", opts)
-vim.keymap.set("v", "<", "<gv", opts)
-
--- Visual Block --
--- Move text up and down
--- vim.keymap.set("x", "J", ":m '>+1<CR>gv=gv", opts)
--- vim.keymap.set("x", "K", ":m '<-2<CR>gv=gv", opts)
-vim.keymap.set("x", "∆", ":m '>+1<CR>gv=gv", opts)
-vim.keymap.set("x", "˚", ":m '<-2<CR>gv=gv", opts)
+keymap("v", KEYS.gt, [[>gv]])
+keymap("v", KEYS.lt, [[<gv]])
 
 -- screen management
-vim.keymap.set("n", "<leader>sv", ":vert split<CR>", opts) -- split window vertically
-vim.keymap.set("n", "<leader>sh", ":hor split<CR>", opts) -- split window horizontally
-vim.keymap.set("n", "<leader>se", ":vert wincmd =<CR>", opts) -- make split windows equal width & height
-vim.keymap.set("n", "<leader>sx", ":close<CR>", opts) -- close current split window
+keymap("n", KEYS.leader.s.v, [[:vert split<CR>]]) -- split window vertically
+keymap("n", KEYS.leader.s.h, [[:hor split<CR>]]) -- split window horizontally
+keymap("n", KEYS.leader.s.e, [[:vert wincmd =<CR>]]) -- make split windows equal width & height
+keymap("n", KEYS.leader.s.x, [[:close<CR>]]) -- close current split window
 
 -- tab management
-vim.keymap.set("n", "<leader>to", ":tabnew<CR>", opts) -- open new tab
-vim.keymap.set("n", "<leader>tx", ":tabclose<CR>", opts) -- close current tab
-vim.keymap.set("n", "<leader>tn", ":tabn<CR>", opts) --  go to next tab
-vim.keymap.set("n", "<leader>tp", ":tabp<CR>", opts) --  go to previous tab
+keymap("n", KEYS.leader.t.o, [[:tabnew<CR>]]) -- open new tab
+keymap("n", KEYS.leader.t.x, [[:tabclose<CR>]]) -- close current tab
+keymap("n", KEYS.leader.t.n, [[:tabn<CR>]]) --  go to next tab
+keymap("n", KEYS.leader.t.p, [[:tabp<CR>]]) --  go to previous tab
 
 -- netrw
-vim.keymap.set("n", "<C-e>", vim.cmd.Explore, opts)
+keymap("n", KEYS.ctrl.e, vim.cmd.Explore)
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "netrw" },
     callback = function(e)
-        local cb_opts = { buffer = e.buf, remap = true, silent = true }
-
-        vim.keymap.set("n", "h", "-", cb_opts)
-        vim.keymap.set("n", "l", "<CR>", cb_opts)
-        vim.keymap.set("n", "<Tab>", "<CR>", cb_opts)
+        local opts = { buffer = e.buf, remap = true, silent = true }
+        vim.keymap.set("n", KEYS.h, [[-]], opts)
+        vim.keymap.set("n", KEYS.l, [[<CR>]], opts)
+        vim.keymap.set("n", KEYS.tab, [[<CR>]], opts)
     end,
 })
 
--- Output the current highlights group
--- vim.keymap.set("n", "<leader>hg", ":lua print(vim.inspect(vim.api.nvim_get_hl(0, {})))<CR>", opts)
-
 -- screen navigation
-vim.keymap.set("n", "<C-h>", "<C-w>h", opts) -- Scroll  characters to the left
-vim.keymap.set("n", "<C-l>", "<C-w>l", opts) -- Scroll  characters to the right
-vim.keymap.set("n", "<C-k>", "<C-w>k", opts)
-vim.keymap.set("n", "<C-j>", "<C-w>j", opts)
+keymap("n", KEYS.ctrl.h, [[<C-w>h]])
+keymap("n", KEYS.ctrl.j, [[<C-w>j]])
+keymap("n", KEYS.ctrl.k, [[<C-w>k]])
+keymap("n", KEYS.ctrl.l, [[<C-w>l]])
