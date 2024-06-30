@@ -65,6 +65,7 @@ KEYS.alt = {
     a5 = "<A-5>",
 }
 
+---@diagnostic disable-next-line: undefined-field
 local home = vim.uv.os_homedir()
 MY_OS = ""
 if vim.startswith(home, "/home/") then
