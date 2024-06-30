@@ -1,10 +1,10 @@
 vim.opt.conceallevel = 1
-
+local notes = vim.fn.expand("~") .. "/Workspaces/notes"
 return {
     "epwalsh/obsidian.nvim",
     event = {
-        "BufReadPre " .. vim.fn.expand("~") .. "/notes/**",
-        "BufNewFile " .. vim.fn.expand("~") .. "/notes/**",
+        "BufReadPre " .. notes .. "/**",
+        "BufNewFile " .. notes .. "/**",
     },
     dependencies = {
         "nvim-lua/plenary.nvim",
@@ -14,17 +14,17 @@ return {
     },
     opts = {
         workspaces = {
-            { name = "notes", path = "~/notes" },
+            { name = "notes", path = notes },
         },
         completion = { nvim_cmp = true },
         mappings = {
-            ["gd"] = {
+            [KEYS.g.d] = {
                 action = function()
                     return require("obsidian").util.gf_passthrough()
                 end,
                 opts = { noremap = false, expr = true, buffer = true },
             },
-            ["<leader>ch"] = {
+            [KEYS.leader.c.h] = {
                 action = function()
                     return require("obsidian").util.toggle_checkbox()
                 end,

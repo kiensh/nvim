@@ -55,14 +55,13 @@ return {
                 end,
             },
             mapping = cmp.mapping.preset.insert({
-                ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
-                ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
-                ["<C-u>"] = cmp.mapping.scroll_docs(-5),
-                ["<C-d>"] = cmp.mapping.scroll_docs(5),
-                ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
-                -- ["<C-e>"] = cmp.mapping.abort(), -- close completion window
-                ["<Tab>"] = cmp.mapping.confirm({ select = true }),
-                ["<CR>"] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
+                [KEYS.ctrl.j] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+                [KEYS.ctrl.k] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+                [KEYS.ctrl.u] = cmp.mapping.scroll_docs(-5),
+                [KEYS.ctrl.d] = cmp.mapping.scroll_docs(5),
+                [KEYS.ctrl.space] = cmp.mapping.complete(), -- show completion suggestions
+                [KEYS.tab] = cmp.mapping.confirm({ select = true }),
+                [KEYS.enter] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
             }),
             sources = cmp.config.sources(convertSources({
                 "copilot",

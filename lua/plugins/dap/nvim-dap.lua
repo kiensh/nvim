@@ -5,8 +5,8 @@ local toggle_sidebar = function(sidebar)
     vim.opt.splitright = true
 end
 
--- vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "", linehl = "", numhl = "" })
--- vim.fn.sign_define("DapStopped", { text = "", texthl = "", linehl = "", numhl = "" })
+vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "", linehl = "", numhl = "" })
+vim.fn.sign_define("DapStopped", { text = "", texthl = "", linehl = "", numhl = "" })
 
 return {
     "mfussenegger/nvim-dap",
@@ -35,37 +35,36 @@ return {
                 local bufnr = vim.api.nvim_get_current_buf()
                 local opts = { buffer = bufnr, remap = false }
 
-                vim.keymap.set("n", "<Tab>", '<Cmd>lua require("dap.ui").trigger_actions({ mode = "first" })<CR>', opts)
-                vim.keymap.set("n", "q", "<Cmd>bdelete!<CR>", opts)
+                vim.keymap.set("n", KEYS.tab, [[<Cmd>lua require("dap.ui").trigger_actions({ mode = "first" })<CR>]], opts)
+                vim.keymap.set("n", KEYS.q, [[<Cmd>bdelete!<CR>]], opts)
             end,
         })
 
         return {
-            { "<Leader>dn", dap.continue },
-            { "<Leader>dc", dap.close },
-            { "<Leader>dj", dap.down },
-            { "<Leader>dk", dap.up },
+            { KEYS.leader.d.n, dap.continue },
+            { KEYS.leader.d.c, dap.close },
+            { KEYS.leader.d.j, dap.down },
+            { KEYS.leader.d.k, dap.up },
 
-            { "<Leader>l", dap.step_over },
-            { "<Leader>j", dap.step_into },
-            { "<Leader>k", dap.step_out },
+            { KEYS.leader.l, dap.step_over },
+            { KEYS.leader.j, dap.step_into },
+            { KEYS.leader.k, dap.step_out },
 
-            { "<Leader>b", dap.toggle_breakpoint },
-            { "<Leader>B", dap.set_breakpoint },
-            -- { "<Leader>lp", dap.set_breakpoint(nil, nil, vim.fn.input("Log point message: ")) },
+            { KEYS.leader.b, dap.toggle_breakpoint },
+            { KEYS.leader.B, dap.set_breakpoint },
 
-            { "<Leader>dr", dap.repl.toggle },
-            { "<Leader>dl", dap.run_last },
-            { "<Leader>dh", widgets.hover, mode = { "n", "v" } },
-            -- { "<Leader>dp", widgets.preview, mode = { "n", "v" } },
+            { KEYS.leader.d.r, dap.repl.toggle },
+            { KEYS.leader.d.l, dap.run_last },
+            { KEYS.leader.d.h, widgets.hover, mode = { "n", "v" } },
+            -- { KEYS.leader.d.p, widgets.preview, mode = { "n", "v" } },
             {
-                "<Leader>df",
+                KEYS.leader.d.f,
                 function()
                     toggle_sidebar(frames_sidebar)
                 end,
             },
             {
-                "<Leader>ds",
+                KEYS.leader.d.s,
                 function()
                     toggle_sidebar(scopes_sidebar)
                 end,

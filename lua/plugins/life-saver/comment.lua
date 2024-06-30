@@ -14,9 +14,9 @@ return {
         }
     end,
     keys = {
-        "gcc",
-        "gbc",
-        { "gc", mode = "x" },
-        { "gb", mode = "x" },
+        KEYS.g.c.c,
+        KEYS.g.b.c,
+        { KEYS.g.c.done, mode = "x" },
+        { KEYS.g.b.done, mode = "x" },
     },
 }

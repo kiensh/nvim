@@ -1,15 +1,13 @@
 return {
     "akinsho/toggleterm.nvim",
     keys = {
-        { "<C-\\>", "<Cmd>ToggleTerm<CR>", mode = "n" },
-        { "<ESC>", "<C-\\><C-n>", mode = "t" },
-        -- { 'jk', "<C-\\><C-n>", mode = 't' },
-        { "<C-h>", "<Cmd>wincmd h<CR>", mode = "t" },
-        { "<C-j>", "<Cmd>wincmd j<CR>", mode = "t" },
-        { "<C-k>", "<Cmd>wincmd k<CR>", mode = "t" },
-        { "<C-l>", "<Cmd>wincmd l<CR>", mode = "t" },
-        -- { '<C-w>', "<C-\\><C-n><C-w>", mode = 't' },
-        { "<C-q>", "<C-\\><C-n><Cmd>bdelete!<CR>", mode = "t" },
+        { KEYS.ctrl.bslash, [[<Cmd>ToggleTerm<CR>]], mode = "n" },
+        { KEYS.escape, [[<C-\\><C-n>]], mode = "t" },
+        { KEYS.ctrl.h, [[<Cmd>wincmd h<CR>]], mode = "t" },
+        { KEYS.ctrl.j, [[<Cmd>wincmd j<CR>]], mode = "t" },
+        { KEYS.ctrl.k, [[<Cmd>wincmd k<CR>]], mode = "t" },
+        { KEYS.ctrl.l, [[<Cmd>wincmd l<CR>]], mode = "t" },
+        { KEYS.ctrl.q, [[<C-\\><C-n><Cmd>bdelete!<CR>]], mode = "t" },
     },
     opts = {
         -- size = 10,
@@ -20,7 +18,7 @@ return {
                 return vim.o.columns * 0.4
             end
         end,
-        open_mapping = [[<c-\>]],
+        open_mapping = KEYS.ctrl.bslash,
         shade_filetypes = {},
         shade_terminals = true,
         shading_factor = 1,

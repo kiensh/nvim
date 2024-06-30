@@ -8,12 +8,12 @@ return {
             auto_trigger = true,
             debounce = 75,
             keymap = {
-                accept = "<C-l>",
+                accept = KEYS.ctrl.l,
                 accept_word = false,
                 accept_line = false,
-                next = "<C-]>",
-                prev = "<C-[>",
-                dismiss = "<C-c>",
+                next = KEYS.ctrl.rbracket,
+                prev = KEYS.ctrl.lbkt,
+                dismiss = KEYS.ctrl.c,
             },
         },
         filetypes = {

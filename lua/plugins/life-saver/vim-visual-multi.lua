@@ -1,8 +1,8 @@
 return {
     "mg979/vim-visual-multi",
     keys = {
-        { "<C-n>", mode = { "n", "v" } },
-        "<C-Down>",
-        "<C-Up>",
+        { KEYS.ctrl.n, mode = { "n", "v" } },
+        KEYS.ctrl.down,
+        KEYS.ctrl.up,
     },
 }

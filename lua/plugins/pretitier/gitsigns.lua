@@ -8,36 +8,31 @@ local on_attach = function(bufnr)
     end
 
     -- Navigation
-    map("n", "]h", function()
+    map("n", KEYS.rbracket.h, function()
         if vim.wo.diff then return "]h" end
         vim.schedule(function() gs.next_hunk() end)
         return "<Ignore>"
     end, { expr = true })
 
-    map("n", "[h", function()
+    map("n", KEYS.lbracket.h, function()
         if vim.wo.diff then return "[h" end
         vim.schedule(function() gs.prev_hunk() end)
         return "<Ignore>"
     end, { expr = true })
 
     -- Actions
-    map("n", "<leader>hs", gs.stage_hunk)
-    map("v", "<leader>hs", function() gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") }) end)
-    map("n", "<leader>hS", gs.stage_buffer)
-    map("n", "<leader>hx", gs.reset_hunk)
-    map("v", "<leader>hx", function() gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") }) end)
-    map("n", "<leader>hX", gs.reset_buffer)
+    map("n", KEYS.leader.h.s, gs.stage_hunk)
+    map("v", KEYS.leader.h.s, function() gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") }) end)
+    map("n", KEYS.leader.h.S, gs.stage_buffer)
+    map("n", KEYS.leader.h.x, gs.reset_hunk)
+    map("v", KEYS.leader.h.x, function() gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") }) end)
+    map("n", KEYS.leader.h.X, gs.reset_buffer)
 
-    map("n", "<leader>hu", gs.undo_stage_hunk)
-    map("n", "<leader>hp", gs.preview_hunk)
-    map("n", "<leader>hb", function() gs.blame_line({ full = true }) end)
-    map("n", "<leader>hd", gs.diffthis)
-    map("n", "<leader>hD", function() gs.diffthis("~") end)
-    -- map("n", "<leader>tb", gs.toggle_current_line_blame)
-    -- map("n", "<leader>td", gs.toggle_deleted)
-
-    -- Text object
-    map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
+    map("n", KEYS.leader.h.u, gs.undo_stage_hunk)
+    map("n", KEYS.leader.h.p, gs.preview_hunk)
+    map("n", KEYS.leader.h.b, function() gs.blame_line({ full = true }) end)
+    map("n", KEYS.leader.h.d, gs.diffthis)
+    map("n", KEYS.leader.h.D, function() gs.diffthis("~") end)
 end
 
 return {

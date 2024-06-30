@@ -5,7 +5,7 @@ return {
         "jayp0521/mason-null-ls.nvim",
     },
     keys = {
-        { "<leader>fm", require("plugins.lsp.none-ls.on_format") },
+        { KEYS.leader.f.m, require("plugins.lsp.none-ls.on_format") },
     },
     opts = function()
         -- import null-ls plugin

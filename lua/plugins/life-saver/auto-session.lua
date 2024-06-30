@@ -4,14 +4,14 @@ return {
     enabled = MY_OS ~= "windows",
     keys = {
         {
-            "<leader>sl",
+            KEYS.leader.s.l,
             function()
                 require("auto-session.session-lens").search_session()
             end,
             noremap = true,
         },
-        { "<leader>ss", "<cmd>:SessionSave<CR>", noremap = true, silent = false },
-        { "<leader>sr", "<cmd>:SessionRestore<CR>", noremap = true, silent = false },
+        { KEYS.leader.s.s, [[<cmd>:SessionSave<CR>]], noremap = true, silent = false },
+        { KEYS.leader.s.r, [[<cmd>:SessionRestore<CR>]], noremap = true, silent = false },
     },
     opts = {
         log_level = "error",
