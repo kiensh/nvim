@@ -1,2 +1,2 @@
-require('uit.core')
-require('uit.lazy')
+require("core")
+require("plugins")
