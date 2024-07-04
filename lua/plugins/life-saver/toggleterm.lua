@@ -2,12 +2,12 @@ return {
     "akinsho/toggleterm.nvim",
     keys = {
         { KEYS.ctrl.bslash, [[<Cmd>ToggleTerm<CR>]], mode = "n" },
-        { KEYS.escape, [[<C-\\><C-n>]], mode = "t" },
+        { KEYS.escape, [[<C-\><C-n>]], mode = "t" },
         { KEYS.ctrl.h, [[<Cmd>wincmd h<CR>]], mode = "t" },
         { KEYS.ctrl.j, [[<Cmd>wincmd j<CR>]], mode = "t" },
         { KEYS.ctrl.k, [[<Cmd>wincmd k<CR>]], mode = "t" },
         { KEYS.ctrl.l, [[<Cmd>wincmd l<CR>]], mode = "t" },
-        { KEYS.ctrl.q, [[<C-\\><C-n><Cmd>bdelete!<CR>]], mode = "t" },
+        { KEYS.ctrl.q, [[<C-\><C-n><Cmd>bdelete!<CR>]], mode = "t" },
     },
     opts = {
         -- size = 10,

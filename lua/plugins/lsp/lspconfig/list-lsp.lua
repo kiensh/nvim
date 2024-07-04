@@ -49,7 +49,7 @@ local list_lsp = {
     },
 
     -- configure jsonls server
-    jsonls = { enabled = false, },
+    jsonls = { enabled = true, },
 
     -- configure angularls server
     angularls = { enabled = false },
@@ -109,6 +109,9 @@ local list_lsp = {
             },
         },
     },
+
+    -- configure bashls
+    bashls = { enabled = true },
 
 }
 
