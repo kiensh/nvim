@@ -1,7 +1,7 @@
 return {
     "mfussenegger/nvim-lint",
     event = { "BufReadPre", "BufNewFile" },
-    config = function(_, _)
+    config = function()
         local lint = require("lint")
 
         lint.linters_by_ft = {
@@ -10,7 +10,7 @@ return {
             javascriptreact = { "eslint_d" },
             typescriptreact = { "eslint_d" },
             svelte = { "eslint_d" },
-            python = { "ruff" },
+            -- python = { "ruff" },
         }
 
         vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
