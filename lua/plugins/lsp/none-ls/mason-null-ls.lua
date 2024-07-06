@@ -3,16 +3,22 @@ return {
     lazy = true,
     dependencies = {
         "williamboman/mason.nvim",
+        "nvimtools/none-ls.nvim",
     },
     opts = {
-        -- list of formatters & linters for mason to install
         ensure_installed = {
-            "stylua", -- lua formatter
-            -- "prettier", -- ts/js formatter
-            -- "eslint_d", -- ts/js linter
+            "stylua",
+            -- "prettier",
+            -- "eslint_d",
             -- "csharpier",
         },
-        -- auto-install configured servers (with lspconfig)
+        methods = {
+            diagnostics = true,
+            formatting = true,
+            code_actions = true,
+            completion = true,
+            hover = true,
+        },
         automatic_installation = true,
     },
 }
