@@ -7,7 +7,7 @@ return {
             function()
                 require("conform").format({
                     lsp_fallback = true,
-                    async = false,
+                    async = true,
                     timeout_ms = 1000,
                 })
             end,
@@ -19,10 +19,6 @@ return {
         formatters_by_ft = {
             lua = { "stylua" },
 
-            -- Conform will run multiple formatters sequentially
-            python = { "black" },
-
-            -- Use a sub-list to run only the first available formatter
             javascript = { "prettier" },
             typescript = { "prettier" },
             javascriptreact = { "prettier" },
@@ -35,7 +31,6 @@ return {
             markdown = { "prettier" },
             graphql = { "prettier" },
 
-            -- Csharp
             cs = { "csharpier" },
         },
     },
