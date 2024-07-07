@@ -20,14 +20,9 @@ vim.opt.smartcase = true
 
 -- cursor line
 vim.opt.cursorline = false
--- vim.opt.guicursor = ""
--- vim.opt.guicursor = "n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor"
--- vim.opt.guicursor = "n-v-c:block-Cursor,i-ci:ver25-Cursor,r-cr:hor20-Cursor"
 vim.cmd("au VimLeave * set guicursor=a:hor20-Cursor/lCursor-blinkon0")
 
 -- appearance
--- vim.opt.termguicolors = true
--- vim.opt.background = "dark"
 vim.opt.signcolumn = "yes"
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 80
@@ -51,13 +46,6 @@ vim.opt.foldmethod = "indent" -- indent syntax
 
 -- netrw
 vim.g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
--- vim.g.netrw_keepdir=0 -- path error
--- vim.g.netrw_banner = 1
--- vim.g.netrw_liststyle = 3
--- vim.g.netrw_winsize = 25
--- vim.g.netrw_browse_split = 1
--- vim.g.netrw_preview = 1
--- vim.g.netrw_altv = 0
 
 -- highlight on yank
 vim.cmd("au TextYankPost * silent! lua vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 200 })")
