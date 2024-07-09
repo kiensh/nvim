@@ -18,7 +18,6 @@ require("lazy").setup({
     { import = "plugins.pretitier" },
     { import = "plugins.life-saver" },
     { import = "plugins.lsp" },
-    -- { import = 'plugins.dap' },
 }, {
     checker = {
         enabled = true,
