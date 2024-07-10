@@ -1,5 +1,6 @@
 vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "", linehl = "", numhl = "" })
 vim.fn.sign_define("DapStopped", { text = "", texthl = "", linehl = "", numhl = "" })
+
 vim.api.nvim_create_autocmd("BufWinEnter", {
     pattern = "dap-*",
     callback = function()
@@ -10,11 +11,13 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
         vim.keymap.set("n", KEYS.q, [[<Cmd>bdelete!<CR>]], opts)
     end,
 })
+
 return {
     "mfussenegger/nvim-dap",
     dependencies = {
-        -- "mfussenegger/nvim-dap-python",
         "jay-babu/mason-nvim-dap.nvim",
+        -- "mfussenegger/nvim-dap-python",
+        "Cliffback/netcoredbg-macOS-arm64.nvim",
     },
     keys = require("plugins.lsp.nvim-dap.keymaps"),
     config = function()
@@ -22,5 +25,6 @@ return {
         dap.set_log_level("TRACE")
         require("dap.ext.vscode").load_launchjs()
         -- require("dap-python").setup("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
+        require("netcoredbg-macOS-arm64").setup(dap)
     end,
 }
