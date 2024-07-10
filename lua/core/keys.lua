@@ -39,6 +39,11 @@ KEYS = {
     p = "p",
     q = "q",
     Q = "Q",
+
+    f5 = "<F5>",
+    f10 = "<F10>",
+    f11 = "<F11>",
+    f12 = "<F12>",
 }
 
 KEYS.leader = {
@@ -56,7 +61,6 @@ KEYS.leader = {
         j = "<leader>dj",
         k = "<leader>dk",
         l = "<leader>dl",
-        n = "<leader>dn",
         p = "<leader>dp",
         r = "<leader>dr",
         s = "<leader>ds",
@@ -87,9 +91,6 @@ KEYS.leader = {
         d = "<leader>hd",
         D = "<leader>hD",
     },
-    j = "<leader>j",
-    k = "<leader>k",
-    l = "<leader>l",
     n = { h = "<leader>nh", },
     y = "<leader>y",
     p = "<leader>p",

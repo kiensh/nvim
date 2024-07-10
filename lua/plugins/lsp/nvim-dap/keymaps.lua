@@ -5,14 +5,14 @@ return function()
     local scopes_sidebar = widgets.sidebar(widgets.scopes, { width = 50 })
 
     return {
-        { KEYS.leader.d.n, dap.continue },
+        { KEYS.f5, dap.continue },
+        { KEYS.f10, dap.step_over },
+        { KEYS.f11, dap.step_into },
+        { KEYS.f12, dap.step_out },
+
         { KEYS.leader.d.c, dap.close },
         { KEYS.leader.d.j, dap.down },
         { KEYS.leader.d.k, dap.up },
-
-        { KEYS.leader.l, dap.step_over },
-        { KEYS.leader.j, dap.step_into },
-        { KEYS.leader.k, dap.step_out },
 
         { KEYS.leader.b, dap.toggle_breakpoint },
         { KEYS.leader.B, dap.set_breakpoint },
