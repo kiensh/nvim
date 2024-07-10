@@ -1,21 +1,17 @@
+vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "", linehl = "", numhl = "" })
+vim.fn.sign_define("DapStopped", { text = "", texthl = "", linehl = "", numhl = "" })
 local toggle_sidebar = function(sidebar)
-    -- widgets.centered_float(widgets.frames)
     vim.opt.splitright = false
     sidebar.toggle()
     vim.opt.splitright = true
 end
-
-vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "", linehl = "", numhl = "" })
-vim.fn.sign_define("DapStopped", { text = "", texthl = "", linehl = "", numhl = "" })
-
 return {
     "mfussenegger/nvim-dap",
-    enabled = false,
     dependencies = {
         -- "mfussenegger/nvim-dap-python",
         "jay-babu/mason-nvim-dap.nvim",
     },
-    keys = function(_, _)
+    keys = function()
         local dap = require("dap")
         dap.set_log_level("TRACE")
 
@@ -29,13 +25,12 @@ return {
         local nvim_dap = vim.api.nvim_create_augroup("nvim-dap", {})
         vim.api.nvim_create_autocmd("BufWinEnter", {
             group = nvim_dap,
-            -- pattern = "dap-scopes-*",
             pattern = "dap-*",
             callback = function()
                 local bufnr = vim.api.nvim_get_current_buf()
                 local opts = { buffer = bufnr, remap = false }
-
                 vim.keymap.set("n", KEYS.tab, [[<Cmd>lua require("dap.ui").trigger_actions({ mode = "first" })<CR>]], opts)
+                vim.keymap.set("n", KEYS.l, [[<Cmd>lua require("dap.ui").trigger_actions({ mode = "first" })<CR>]], opts)
                 vim.keymap.set("n", KEYS.q, [[<Cmd>bdelete!<CR>]], opts)
             end,
         })
