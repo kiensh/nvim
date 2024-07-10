@@ -15,6 +15,11 @@ local codeAction = {
         },
     },
 }
+local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
 
 return {
     "neovim/nvim-lspconfig",
@@ -39,12 +44,6 @@ return {
                 ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
             },
         })
-
-        local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-        for type, icon in pairs(signs) do
-            local hl = "DiagnosticSign" .. type
-            vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-        end
 
         local list_lsp = require("plugins.lsp.lspconfig.list-lsp")
         for k, v in pairs(list_lsp) do
