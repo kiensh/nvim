@@ -16,15 +16,15 @@ return {
     "mfussenegger/nvim-dap",
     dependencies = {
         "jay-babu/mason-nvim-dap.nvim",
-        -- "mfussenegger/nvim-dap-python",
-        "Cliffback/netcoredbg-macOS-arm64.nvim",
+        MY_OS.isMac() and "Cliffback/netcoredbg-macOS-arm64.nvim" or nil,
     },
     keys = require("plugins.lsp.nvim-dap.keymaps"),
     config = function()
         local dap = require("dap")
         dap.set_log_level("TRACE")
         require("dap.ext.vscode").load_launchjs()
-        -- require("dap-python").setup("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
-        require("netcoredbg-macOS-arm64").setup(dap)
+        if MY_OS.isMac() then
+            require("netcoredbg-macOS-arm64").setup(dap)
+        end
     end,
 }

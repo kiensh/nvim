@@ -51,7 +51,7 @@ vim.g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 vim.cmd("au TextYankPost * silent! lua vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 200 })")
 
 -- shell
-if MY_OS == "windows" then
+if MY_OS.isWindows() then
     vim.opt.shell="pwsh"
     vim.opt.shellcmdflag="-command"
     vim.opt.shellquote="\""

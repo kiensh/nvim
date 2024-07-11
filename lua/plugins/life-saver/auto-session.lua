@@ -1,7 +1,7 @@
 return {
     "rmagatti/auto-session",
     lazy = false,
-    enabled = MY_OS ~= "windows",
+    enabled = not MY_OS.isWindows(),
     keys = {
         {
             KEYS.leader.s.l,
