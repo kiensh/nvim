@@ -1,7 +1,7 @@
 vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "", linehl = "", numhl = "" })
 vim.fn.sign_define("DapStopped", { text = "", texthl = "", linehl = "", numhl = "" })
 
-vim.api.nvim_create_autocmd("BufWinEnter", {
+vim.api.nvim_create_autocmd({ "BufWinEnter", "FileType" }, {
     pattern = "dap-*",
     callback = function()
         local bufnr = vim.api.nvim_get_current_buf()
