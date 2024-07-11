@@ -1,6 +1,8 @@
 return function(client, bufnr)
     local opts = { noremap = true, silent = true, buffer = bufnr }
-    vim.api.nvim_set_current_dir(client.config.root_dir)
+    if (not client.config.single_file_support) then
+        vim.api.nvim_set_current_dir(client.config.root_dir)
+    end
 
     -- set keybinds
     opts.desc = "Show LSP references"

@@ -25,10 +25,10 @@ local list_lsp = {
     },
 
     -- configure typescript server with plugin
-    tsserver = { enabled = false, },
+    tsserver = { enabled = false },
 
     -- configure css server
-    cssls = { enabled = false, },
+    cssls = { enabled = false },
 
     -- configure tailwindcss server
     tailwindcss = { enabled = false },
@@ -49,7 +49,7 @@ local list_lsp = {
     },
 
     -- configure jsonls server
-    jsonls = { enabled = true, },
+    jsonls = { enabled = true },
 
     -- configure angularls server
     angularls = { enabled = false },
@@ -73,7 +73,7 @@ local list_lsp = {
 
     -- configure omnisharp server
     omnisharp = {
-        enabled = false,
+        enabled = true,
         cmd = { "dotnet", vim.fn.stdpath("data") .. "/mason/packages/omnisharp/libexec/OmniSharp.dll" },
         enable_editorconfig_support = true,
         enable_roslyn_analyzers = true,
@@ -111,8 +111,14 @@ local list_lsp = {
     },
 
     -- configure bashls
-    bashls = { enabled = true },
-
+    bashls = {
+        enabled = true,
+        settings = {
+            bashIde = {
+                globPattern = "*@(.sh|.inc|.bash|.command)",
+            },
+        },
+    },
 }
 
 vim.api.nvim_create_autocmd({ "BufWinEnter", "BufReadPost" }, {

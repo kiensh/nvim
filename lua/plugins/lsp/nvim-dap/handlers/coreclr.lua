@@ -18,10 +18,6 @@ local get_debug = function(items, _)
 end
 
 return function(config)
-    require("mason-nvim-dap").default_setup(config)
-
-    config.name = "coreclr"
-    config.filetypes = { "cs" }
     config.configurations = {
         {
             name = "NetCoreDbg: Launch",
@@ -33,9 +29,7 @@ return function(config)
                 local items = vim.fn.globpath(vim.fn.getcwd(), pattern, false, 1)
                 return get_debug(items, pattern)
             end,
-            env = {
-                ASPNETCORE_ENVIRONMENT = "Development",
-            },
+            env = { ASPNETCORE_ENVIRONMENT = "Development" },
         },
         {
             type = "coreclr",
@@ -47,7 +41,6 @@ return function(config)
                         return vim.startswith(proc.name, vim.fn.getcwd())
                     end,
                 })
-                -- return require("dap.utils").pick_process({ filter = vim.fn.getcwd() })
             end,
         },
     }
