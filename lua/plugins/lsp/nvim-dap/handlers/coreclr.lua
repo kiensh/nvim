@@ -12,12 +12,17 @@ local get_debug = function(items, _)
             end
             coroutine.resume(dap_run_co, choice)
         end
-
         vim.ui.select(items, opts, cont)
     end)
 end
 
 return function(config)
+    if MY_OS.isMac() then
+        local dap = require("dap")
+        require("netcoredbg-macOS-arm64").setup(dap)
+        dap.configurations.cs = {}
+        config.adapters = dap.adapters.coreclr
+    end
     config.configurations = {
         {
             name = "NetCoreDbg: Launch",
@@ -44,5 +49,5 @@ return function(config)
             end,
         },
     }
-    require('mason-nvim-dap').default_setup(config)
+    require("mason-nvim-dap").default_setup(config)
 end

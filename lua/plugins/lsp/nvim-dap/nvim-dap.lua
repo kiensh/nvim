@@ -23,8 +23,5 @@ return {
         local dap = require("dap")
         dap.set_log_level("TRACE")
         require("dap.ext.vscode").load_launchjs()
-        if MY_OS.isMac() then
-            require("netcoredbg-macOS-arm64").setup(dap)
-        end
     end,
 }
