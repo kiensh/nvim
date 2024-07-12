@@ -1,18 +1,27 @@
-local get_debug = function(items, _)
+local get_subdir_name = function(directory)
+    local t, popen = {}, io.popen
+    local pfile = popen("ls -l '" .. directory .. "' | grep ^d | awk '{print $NF}'")
+    ---@cast pfile -nil
+    for filename in pfile:lines() do
+        table.insert(t, filename)
+    end
+    pfile:close()
+    return t
+end
+local choose_proj = function(proj_dll)
     return coroutine.create(function(dap_run_co)
-        -- local items = vim.fn.globpath(vim.fn.getcwd(), pattern, 0, 1)
         local opts = {
             format_item = function(path)
                 return vim.fn.fnamemodify(path, ":t")
             end,
         }
-        local cont = function(choice)
+        local on_choice = function(choice)
             if choice == nil then
                 return nil
             end
             coroutine.resume(dap_run_co, choice)
         end
-        vim.ui.select(items, opts, cont)
+        vim.ui.select(proj_dll, opts, on_choice)
     end)
 end
 
@@ -30,9 +39,15 @@ return function(config)
             request = "launch",
             cwd = "${fileDirname}",
             program = function()
-                local pattern = "**/bin/Debug/**/*.dll"
-                local items = vim.fn.globpath(vim.fn.getcwd(), pattern, false, 1)
-                return get_debug(items, pattern)
+                local list_subdir = get_subdir_name(vim.fn.getcwd())
+                local proj_dll = {}
+                for _, dir in ipairs(list_subdir) do
+                    local pattern = "**/" .. dir .. "/bin/Debug/**/"..dir..".dll"
+                    local all_dll = vim.fn.globpath(vim.fn.getcwd(), pattern, false, 1)
+                    table.insert(proj_dll, all_dll[1])
+                end
+                print(vim.inspect(proj_dll))
+                return choose_proj(proj_dll)
             end,
             env = { ASPNETCORE_ENVIRONMENT = "Development" },
         },
