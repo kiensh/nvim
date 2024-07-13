@@ -1,4 +1,4 @@
-vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "", linehl = "", numhl = "" })
+vim.fn.sign_define("DapBreakpoint", { text = " ", texthl = "", linehl = "", numhl = "" })
 vim.fn.sign_define("DapStopped", { text = "", texthl = "", linehl = "", numhl = "" })
 
 vim.api.nvim_create_autocmd({ "BufWinEnter", "FileType" }, {
@@ -14,10 +14,7 @@ vim.api.nvim_create_autocmd({ "BufWinEnter", "FileType" }, {
 
 return {
     "mfussenegger/nvim-dap",
-    dependencies = {
-        "jay-babu/mason-nvim-dap.nvim",
-        MY_OS.isMac() and "Cliffback/netcoredbg-macOS-arm64.nvim" or nil,
-    },
+    dependencies = { "jay-babu/mason-nvim-dap.nvim" },
     keys = require("plugins.lsp.nvim-dap.keymaps"),
     config = function()
         local dap = require("dap")
