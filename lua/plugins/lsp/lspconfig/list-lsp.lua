@@ -1,6 +1,7 @@
 local list_lsp = {
     -- configure lua server (with special settings)
     lua_ls = {
+        enabled = true,
         settings = { -- custom settings for lua
             Lua = {
                 -- make the language server recognize "vim" global
@@ -52,7 +53,7 @@ local list_lsp = {
     jsonls = { enabled = true },
 
     -- configure angularls server
-    angularls = { enabled = false },
+    angularls = { enabled = true },
 
     -- configure python server
     pyright = {
@@ -137,7 +138,7 @@ vim.api.nvim_create_autocmd({ "BufWinEnter", "BufReadPost" }, {
 })
 
 for k, v in pairs(list_lsp) do
-    if v.enabled == false then
+    if not v.enabled then
         list_lsp[k] = nil
     end
 end
