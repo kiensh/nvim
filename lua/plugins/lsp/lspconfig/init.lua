@@ -1,6 +1,4 @@
 LIST_LSPCONFIG = {
-
-    -- configure lua server (with special settings)
     lua_ls = {
         enabled = true,
         settings = { -- custom settings for lua
@@ -19,44 +17,35 @@ LIST_LSPCONFIG = {
             },
         },
     },
+    jsonls = { enabled = true },
+    bashls = {
+        enabled = true,
+        settings = {
+            bashIde = {
+                globPattern = "*@(.sh|.inc|.bash|.command)",
+            },
+        },
+    },
 
-    -- configure html server
     html = {
         enabled = false,
         filetypes = { "html", "typescriptreact", "javascriptreact" },
     },
-
-    -- configure typescript server with plugin
     tsserver = { enabled = false },
-
-    -- configure css server
     cssls = { enabled = false },
 
-    -- configure tailwindcss server
     tailwindcss = { enabled = false },
-
-    -- configure eslint-lsp server
     eslint = { enabled = false },
-
-    -- configure graphql language server
     graphql = {
         enabled = false,
         filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
     },
-
-    -- configure emmet language server
     emmet_ls = {
         enabled = false,
         filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
     },
-
-    -- configure jsonls server
-    jsonls = { enabled = true },
-
-    -- configure angularls server
     angularls = { enabled = true },
 
-    -- configure python server
     pyright = {
         enabled = false,
         settings = {
@@ -73,7 +62,6 @@ LIST_LSPCONFIG = {
         },
     },
 
-    -- configure omnisharp server
     omnisharp = {
         enabled = true,
         cmd = { "dotnet", vim.fn.stdpath("data") .. "/mason/packages/omnisharp/libexec/OmniSharp.dll" },
@@ -90,7 +78,6 @@ LIST_LSPCONFIG = {
         },
     },
 
-    -- configure dart
     dartls = {
         enabled = false,
         init_options = {
@@ -115,15 +102,6 @@ LIST_LSPCONFIG = {
         },
     },
 
-    -- configure bashls
-    bashls = {
-        enabled = true,
-        settings = {
-            bashIde = {
-                globPattern = "*@(.sh|.inc|.bash|.command)",
-            },
-        },
-    },
 }
 
 vim.api.nvim_create_autocmd({ "BufWinEnter", "BufReadPost" }, {
