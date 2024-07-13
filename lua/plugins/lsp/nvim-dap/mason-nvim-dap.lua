@@ -1,10 +1,9 @@
-local list_lsps = require("plugins.lsp.lspconfig.list-lsp")
 return {
     "jay-babu/mason-nvim-dap.nvim",
     lazy = true, -- loaded by nvim-dap
     dependencies = {
         "williamboman/mason.nvim",
-        MY_OS.isMac() and list_lsps["omnisharp"] ~= nil
+        MY_OS.isMac() and LIST_LSPCONFIG["omnisharp"]
             and "Cliffback/netcoredbg-macOS-arm64.nvim"
             or nil,
     },

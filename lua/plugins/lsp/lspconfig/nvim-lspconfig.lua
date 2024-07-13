@@ -15,6 +15,7 @@ local codeAction = {
         },
     },
 }
+
 local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
 for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
@@ -27,7 +28,9 @@ return {
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
         "williamboman/mason-lspconfig.nvim",
-        "Hoffs/omnisharp-extended-lsp.nvim",
+        LIST_LSPCONFIG["omnisharp"]
+            and "Hoffs/omnisharp-extended-lsp.nvim"
+            or nil,
     },
     config = function()
         local lspconfig = require("lspconfig")
@@ -45,8 +48,7 @@ return {
             },
         })
 
-        local list_lsp = require("plugins.lsp.lspconfig.list-lsp")
-        for k, v in pairs(list_lsp) do
+        for k, v in pairs(LIST_LSPCONFIG) do
             lspconfig[k].setup(v)
         end
     end,
