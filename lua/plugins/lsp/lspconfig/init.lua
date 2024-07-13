@@ -1,4 +1,5 @@
 LIST_LSPCONFIG = {
+
     -- configure lua server (with special settings)
     lua_ls = {
         enabled = true,
