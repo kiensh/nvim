@@ -1,6 +1,6 @@
 return {
     "stevearc/conform.nvim",
-    event = { "BufReadPre", "BufNewFile" },
+    dependencies = { "zapling/mason-conform.nvim" },
     keys = {
         {
             KEYS.leader.f.m,

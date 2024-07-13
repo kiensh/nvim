@@ -91,6 +91,7 @@ KEYS.leader = {
         d = "<leader>hd",
         D = "<leader>hD",
     },
+    l = "<leader>l",
     n = { h = "<leader>nh", },
     y = "<leader>y",
     p = "<leader>p",

@@ -1,9 +1,7 @@
 return {
     "rshkarin/mason-nvim-lint",
-    dependencies = {
-        "williamboman/mason.nvim",
-        "mfussenegger/nvim-lint",
-    },
+    lazy = true,
+    dependencies = { "williamboman/mason.nvim" },
     opts = {
         ensure_installed = {},
         automatic_installation = true,
