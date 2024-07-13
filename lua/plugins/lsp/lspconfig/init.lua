@@ -82,9 +82,10 @@ LIST_LSPCONFIG = {
         enable_import_completion = true,
         enable_ms_build_load_projects_on_demand = false,
         handlers = {
-            ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
-            ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
-            ["textDocument/definition"] = function() return require("omnisharp_extended").handler end,
+            ["textDocument/definition"] = function() return require("omnisharp_extended").definition_handler end,
+            ["textDocument/typeDefinition"] = function() return require('omnisharp_extended').type_definition_handler end,
+            ["textDocument/references"] = function() return require('omnisharp_extended').references_handler end,
+            ["textDocument/implementation"] = function() return require('omnisharp_extended').implementation_handler end,
         },
     },
 

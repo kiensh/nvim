@@ -6,29 +6,15 @@ return function(client, bufnr)
 
     -- set keybinds
     opts.desc = "Show LSP definitions"
-    vim.keymap.set("n", KEYS.g.d, function()
-        return client.name == "omnisharp"
-                and require("omnisharp_extended").telescope_lsp_definitions({
-                    layout_strategy = "vertical",
-                    layout_config = {
-                        width = 0.9,
-                        height = 0.9,
-                        prompt_position = "top",
-                        preview_cutoff = 120,
-                        horizontal = { width = { padding = 0.15 } },
-                        vertical = { preview_height = 0.75 },
-                    },
-                })
-                or vim.cmd("Telescope lsp_definitions")
-    end, opts)
+    vim.keymap.set("n", KEYS.g.d, function() vim.cmd([[Telescope lsp_definitions]]) end, opts)
     opts.desc = "Go to declaration"
-    vim.keymap.set("n", KEYS.g.D, vim.lsp.buf.declaration, opts) -- go to declaration
+    vim.keymap.set("n", KEYS.g.D, vim.lsp.buf.declaration, opts)
     opts.desc = "Show LSP implementations"
-    vim.keymap.set("n", KEYS.g.i, "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
+    vim.keymap.set("n", KEYS.g.i, function() vim.cmd([[Telescope lsp_implementations]]) end, opts)
     opts.desc = "Show LSP references"
-    vim.keymap.set("n", KEYS.g.r, "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
+    vim.keymap.set("n", KEYS.g.r, function() vim.cmd([[Telescope lsp_references]]) end, opts)
     opts.desc = "Show LSP type definitions"
-    vim.keymap.set("n", KEYS.g.t, "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
+    vim.keymap.set("n", KEYS.g.t, function() vim.cmd([[Telescope lsp_type_definitions]]) end, opts)
 
     opts.desc = "See available code actions"
     vim.keymap.set({ "n", "v" }, KEYS.leader.c.a, vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
@@ -42,4 +28,16 @@ return function(client, bufnr)
     vim.keymap.set("n", KEYS.lbracket.d, vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
     opts.desc = "Go to next diagnostic"
     vim.keymap.set("n", KEYS.rbracket.d, vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
+
+    -- omnisharp_extended
+    if client.name == "omnisharp" then
+        opts.desc = "Show LSP definitions"
+        vim.keymap.set("n", KEYS.g.d, function() require("omnisharp_extended").telescope_lsp_definition() end, opts)
+        opts.desc = "Show LSP implementations"
+        vim.keymap.set("n", KEYS.g.i, function() require("omnisharp_extended").telescope_lsp_implementation() end, opts)
+        opts.desc = "Show LSP references"
+        vim.keymap.set("n", KEYS.g.r, function() require("omnisharp_extended").telescope_lsp_references() end, opts)
+        opts.desc = "Show LSP type definitions"
+        vim.keymap.set("n", KEYS.g.t, function() require("omnisharp_extended").telescope_lsp_type_definition() end, opts)
+    end
 end
