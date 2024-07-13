@@ -19,13 +19,14 @@ LIST_LSPCONFIG = {
     },
     jsonls = { enabled = true },
     bashls = {
-        enabled = true,
+        enabled = MY_OS.isMac() or MY_OS.isLinux(),
         settings = {
             bashIde = {
                 globPattern = "*@(.sh|.inc|.bash|.command)",
             },
         },
     },
+    powershell_es = { enabled = MY_OS.isWindows() },
 
     html = {
         enabled = false,
