@@ -1,6 +1,7 @@
 KEYS = {
     space = " ",
     escape = "<ESC>",
+    esc_esc = "<ESC><ESC>",
     tab = "<TAB>",
     enter = "<CR>",
     lt = "<",
