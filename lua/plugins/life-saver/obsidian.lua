@@ -8,9 +8,7 @@ return {
     },
     dependencies = {
         "nvim-lua/plenary.nvim",
-        "hrsh7th/nvim-cmp",
         "nvim-telescope/telescope.nvim",
-        "nvim-treesitter/nvim-treesitter",
     },
     opts = {
         workspaces = {
