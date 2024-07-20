@@ -6,10 +6,7 @@ return {
         "BufReadPre " .. notes .. "/**",
         "BufNewFile " .. notes .. "/**",
     },
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-        "nvim-telescope/telescope.nvim",
-    },
+    dependencies = { "nvim-lua/plenary.nvim" },
     opts = {
         workspaces = {
             { name = "notes", path = notes },
