@@ -1,11 +1,10 @@
 local toggle_sidebar = function(sidebar)
-    vim.opt.splitright = false
-    -- sidebar.toggle()
     if not sidebar.close({ mode = 'toggle' }) then
+        vim.opt.splitright = false
         local _, win = sidebar.open()
+        vim.opt.splitright = true
         vim.api.nvim_set_current_win(win)
     end
-    vim.opt.splitright = true
 end
 return function()
     local dap = require("dap")
