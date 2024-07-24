@@ -25,6 +25,12 @@ return {
                 end,
                 opts = { buffer = true },
             },
+            [KEYS.enter] = {
+                action = function()
+                    return require("obsidian").util.smart_action()
+                end,
+                opts = { buffer = true, expr = true },
+            },
         },
         picker = {
             name = "telescope.nvim",
