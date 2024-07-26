@@ -48,7 +48,7 @@ LIST_LSPCONFIG = {
     angularls = { enabled = true },
 
     pyright = {
-        enabled = false,
+        enabled = true,
         settings = {
             python = {
                 analysis = {
