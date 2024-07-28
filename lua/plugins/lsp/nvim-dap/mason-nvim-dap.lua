@@ -15,7 +15,7 @@ return {
             coreclr = require("plugins.lsp.nvim-dap.handlers.coreclr"),
             bash = require("plugins.lsp.nvim-dap.handlers.bashdb"),
             firefox = require("plugins.lsp.nvim-dap.handlers.firefox"),
-            debugpy = require("plugins.lsp.nvim-dap.handlers.debugpy"),
+            python = require("plugins.lsp.nvim-dap.handlers.debugpy"),
         },
     },
 }
