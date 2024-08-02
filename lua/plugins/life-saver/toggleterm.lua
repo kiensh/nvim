@@ -10,7 +10,6 @@ return {
         { KEYS.ctrl.q, [[<C-\><C-n><Cmd>bdelete!<CR>]], mode = "t" },
     },
     opts = {
-        -- size = 10,
         size = function(term)
             if term.direction == "horizontal" then
                 return vim.o.lines * 0.6
