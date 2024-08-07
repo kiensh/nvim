@@ -8,7 +8,7 @@ vim.g.mapleader = KEYS.space
 keymap("i", KEYS.j.k, [[<ESC>]])
 keymap("i", KEYS.escape, [[<ESC>]])
 keymap("n", KEYS.leader.n.h, [[:nohl<CR>]])
-keymap("n", KEYS.leader.q, [[:bdelete!<CR>]])
+keymap("n", KEYS.leader.q.done, [[:bdelete!<CR>]])
 keymap("n", KEYS.Q, [[:%bd|e#<CR>]])
 
 -- keymap("n", "<leader>=", [[<C-a>]]) -- increase a number
@@ -71,3 +71,7 @@ keymap("n", KEYS.ctrl.h, [[<C-w>h]])
 keymap("n", KEYS.ctrl.j, [[<C-w>j]])
 keymap("n", KEYS.ctrl.k, [[<C-w>k]])
 keymap("n", KEYS.ctrl.l, [[<C-w>l]])
+
+-- quickfix
+keymap("n", KEYS.leader.q.f, [[:vimgrep /<C-r><C-w>/jg **/*]])
+keymap("n", KEYS.leader.q.F, [[:vimgrep /<C-r>+/jg **/*]])

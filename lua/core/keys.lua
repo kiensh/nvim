@@ -97,7 +97,11 @@ KEYS.leader = {
     y = "<leader>y",
     p = "<leader>p",
     P = "<leader>P",
-    q = "<leader>q",
+    q = {
+        done = "<leader>q",
+        f = "<leader>qf",
+        F = "<leader>qF",
+    },
     r = {
         p = "<leader>rp",
         P = "<leader>rP",
@@ -118,7 +122,10 @@ KEYS.leader = {
         p = "<leader>tp",
         x = "<leader>tx",
     },
-    x = { x = "<leader>xx" },
+    x = {
+        x = "<leader>xx",
+        q = "<leader>xq",
+    },
 }
 
 KEYS.ctrl = {
