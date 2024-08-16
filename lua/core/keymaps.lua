@@ -72,5 +72,5 @@ keymap("n", KEYS.ctrl.k, [[<C-w>k]])
 keymap("n", KEYS.ctrl.l, [[<C-w>l]])
 
 -- quickfix
-keymap("n", KEYS.leader.q.f, [[:vimgrep /<C-r><C-w>/jg **/*]])
-keymap("n", KEYS.leader.q.F, [[:vimgrep /<C-r>+/jg **/*]])
+-- keymap("n", KEYS.leader.q.f, [[:vimgrep /<C-r><C-w>/jg **/*]])
+-- keymap("n", KEYS.leader.q.F, [[:vimgrep /<C-r>+/jg **/*]])
