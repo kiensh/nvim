@@ -29,10 +29,10 @@ LIST_LSPCONFIG = {
     powershell_es = { enabled = MY_OS.isWindows() },
 
     html = {
-        enabled = false,
+        enabled = true,
         filetypes = { "html", "typescriptreact", "javascriptreact" },
     },
-    tsserver = { enabled = false },
+    tsserver = { enabled = true },
     cssls = { enabled = false },
 
     tailwindcss = { enabled = false },
@@ -45,7 +45,7 @@ LIST_LSPCONFIG = {
         enabled = false,
         filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
     },
-    angularls = { enabled = true },
+    angularls = { enabled = false },
 
     pyright = {
         enabled = true,
