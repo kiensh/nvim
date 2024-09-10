@@ -29,14 +29,14 @@ LIST_LSPCONFIG = {
     powershell_es = { enabled = MY_OS.isWindows() },
 
     html = {
-        enabled = true,
+        enabled = false,
         filetypes = { "html", "typescriptreact", "javascriptreact" },
     },
     tsserver = { enabled = true },
     cssls = { enabled = false },
 
     tailwindcss = { enabled = false },
-    eslint = { enabled = false },
+    eslint = { enabled = true },
     graphql = {
         enabled = false,
         filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
