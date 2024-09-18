@@ -19,7 +19,8 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- cursor line
-vim.opt.cursorline = false
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number"
 vim.cmd("au VimLeave * set guicursor=a:hor20-Cursor/lCursor-blinkon0")
 
 -- appearance
