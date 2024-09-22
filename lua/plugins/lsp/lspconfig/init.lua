@@ -17,7 +17,7 @@ LIST_LSPCONFIG = {
             },
         },
     },
-    jsonls = { enabled = true },
+    jsonls = { enabled = false },
     bashls = {
         enabled = MY_OS.isMac() or MY_OS.isLinux(),
         settings = {
@@ -112,6 +112,7 @@ vim.api.nvim_create_autocmd({ "BufWinEnter", "BufReadPost" }, {
         "*.jsx",
         "*.ts",
         "*.tsx",
+        "*.json",
     },
     callback = function()
         vim.opt.shiftwidth = 2
