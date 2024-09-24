@@ -105,22 +105,6 @@ LIST_LSPCONFIG = {
 
 }
 
-vim.api.nvim_create_autocmd({ "BufWinEnter", "BufReadPost" }, {
-    pattern = {
-        "*.dart",
-        "*.js",
-        "*.jsx",
-        "*.ts",
-        "*.tsx",
-        "*.json",
-    },
-    callback = function()
-        vim.opt.shiftwidth = 2
-        vim.opt.tabstop = 2
-        vim.opt.softtabstop = 2
-    end,
-})
-
 for k, v in pairs(LIST_LSPCONFIG) do
     if not v.enabled then
         LIST_LSPCONFIG[k] = nil

@@ -7,6 +7,25 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
+vim.api.nvim_create_autocmd({ "BufWinEnter", "BufReadPost", "FileType" }, {
+    pattern = {
+        "*.dart",
+        "*.js",
+        "*.jsx",
+        "*.ts",
+        "*.tsx",
+        "*.json",
+        "sh",
+        "bash",
+        "zsh",
+    },
+    callback = function()
+        vim.opt.shiftwidth = 2
+        vim.opt.tabstop = 2
+        vim.opt.softtabstop = 2
+    end,
+})
+
 
 vim.opt.autoindent = true
 vim.opt.smartindent = true
