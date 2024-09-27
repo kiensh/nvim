@@ -3,6 +3,9 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- tabs & indentation
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
@@ -15,9 +18,9 @@ vim.api.nvim_create_autocmd({ "BufWinEnter", "BufReadPost", "FileType" }, {
         "*.ts",
         "*.tsx",
         "*.json",
-        "sh",
-        "bash",
-        "zsh",
+        -- "sh",
+        -- "bash",
+        -- "zsh",
     },
     callback = function()
         vim.opt.shiftwidth = 2
@@ -25,10 +28,6 @@ vim.api.nvim_create_autocmd({ "BufWinEnter", "BufReadPost", "FileType" }, {
         vim.opt.softtabstop = 2
     end,
 })
-
-
-vim.opt.autoindent = true
-vim.opt.smartindent = true
 
 -- line wrapping
 vim.opt.wrap = false
@@ -51,6 +50,16 @@ vim.opt.updatetime = 50
 
 -- backspace
 vim.opt.backspace = "indent,eol,start"
+
+-- listchars
+vim.opt.list = true
+vim.opt.listchars = {
+    tab = "▸ ",
+    trail = "·",
+    extends = "»",
+    precedes = "«",
+    leadmultispace = ".",
+}
 
 -- split windows
 vim.opt.splitright = true

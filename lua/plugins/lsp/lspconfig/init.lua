@@ -32,7 +32,7 @@ LIST_LSPCONFIG = {
         enabled = false,
         filetypes = { "html", "typescriptreact", "javascriptreact" },
     },
-    tsserver = { enabled = true },
+    ts_ls = { enabled = true },
     cssls = { enabled = false },
 
     tailwindcss = { enabled = false },
