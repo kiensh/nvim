@@ -12,7 +12,7 @@ return {
                 accept_word = false,
                 accept_line = false,
                 next = KEYS.ctrl.rbracket,
-                prev = KEYS.ctrl.lbkt,
+                prev = KEYS.ctrl.lbracket,
                 dismiss = KEYS.ctrl.c,
             },
         },
