@@ -47,6 +47,15 @@ vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 80
 vim.opt.colorcolumn = "80"
 vim.opt.updatetime = 50
+vim.opt.termguicolors = true
+vim.cmd [[
+  highlight Normal guibg=none
+  highlight NonText guibg=none
+  highlight NormalFloat guibg=none
+  highlight Normal ctermbg=none
+  highlight NonText ctermbg=none
+  highlight NormalFloat ctermbg=none
+]]
 
 -- backspace
 vim.opt.backspace = "indent,eol,start"
