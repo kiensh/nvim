@@ -104,6 +104,7 @@ LIST_LSPCONFIG = {
         },
     },
 
+    texlab = { enabled = true },
 }
 
 for k, v in pairs(LIST_LSPCONFIG) do

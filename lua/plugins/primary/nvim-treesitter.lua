@@ -4,10 +4,13 @@ return {
     build = ":TSUpdate",
     opts = {
         auto_install = true,
-        highlight = { enable = true },
+        highlight = {
+            enable = true,
+            disable = { "latex" },
+        },
         indent = { enable = true },
-        ensure_installed = { "lua", "vim" },
-        ignore_install = { "help" },
+        ensure_installed = { "lua" },
+        ignore_install = { "vim" },
     },
     config = function(_, opts)
         require("nvim-treesitter.configs").setup(opts)
