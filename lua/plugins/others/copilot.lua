@@ -12,7 +12,8 @@ return {
                 accept_word = false,
                 accept_line = false,
                 next = KEYS.ctrl.rbracket,
-                prev = KEYS.ctrl.lbracket,
+                -- Disabled because <C-[> is represented as <Esc> in terminal
+                -- prev = KEYS.ctrl.lbracket,
                 dismiss = KEYS.ctrl.c,
             },
         },
