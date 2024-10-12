@@ -39,13 +39,13 @@ keymap("x", KEYS.alt.j, [[:m '>+1<CR>gv=gv]])
 keymap("x", KEYS.alt.k, [[:m '<-2<CR>gv=gv]])
 
 -- Move text left and right
-keymap("v", KEYS.gt, [[>gv]])
-keymap("v", KEYS.lt, [[<gv]])
+keymap("v", KEYS.greater_than, [[>gv]])
+keymap("v", KEYS.less_than, [[<gv]])
 
 -- screen management
 keymap("n", KEYS.leader.s.v, [[:vert split<CR>]]) -- split window vertically
 keymap("n", KEYS.leader.s.h, [[:hor split<CR>]]) -- split window horizontally
-keymap("n", KEYS.leader.s.e, [[:vert wincmd =<CR>]]) -- make split windows equal width & height
+keymap("n", KEYS.leader.s.e, [[:wincmd =<CR>]]) -- make split windows equal width & height
 keymap("n", KEYS.leader.s.x, [[:close<CR>]]) -- close current split window
 
 -- tab management
