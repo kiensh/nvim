@@ -32,6 +32,14 @@ return {
             graphql = { "prettier" },
 
             cs = { "csharpier" },
+
+            tex = { "latexindent" },
+            bib = { "bibtex-tidy" },
+        },
+        formatters = {
+            latexindent = {
+                args = { "-y=defaultIndent: \"  \"" },
+            },
         },
     },
 }

@@ -10,17 +10,15 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
-vim.api.nvim_create_autocmd({ "BufWinEnter", "BufReadPost", "FileType" }, {
+vim.api.nvim_create_autocmd({ "FileType" }, {
     pattern = {
-        "*.dart",
-        "*.js",
-        "*.jsx",
-        "*.ts",
-        "*.tsx",
-        "*.json",
-        -- "sh",
-        -- "bash",
-        -- "zsh",
+        "dart",
+        "javascript*", -- "javascriptreact",
+        "typescript*", -- "typescriptreact",
+        "json",
+        "yaml",
+        "tex",
+        "bib",
     },
     callback = function()
         vim.opt.shiftwidth = 2
