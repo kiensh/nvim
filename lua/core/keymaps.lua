@@ -17,7 +17,7 @@ keymap("n", KEYS.Q, [[:%bd|e#<CR>]])
 
 keymap({ "n", "i" }, KEYS.ctrl.s, [[<ESC>:wa<CR>]])
 keymap("n", KEYS.leader.r.p, [[:%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left> <BS>]])
-keymap("n", KEYS.leader.r.P, [[:%s/<C-r>+/<C-r>+/gI<Left><Left><Left> <BS>]])
+keymap("n", KEYS.leader.r.P, [[:%s/<C-r>0/<C-r>+/gI<Left><Left><Left> <BS>]])
 
 keymap("n", KEYS.ctrl.d, [[<C-d>zz]])
 keymap("n", KEYS.ctrl.u, [[<C-u>zz]])
