@@ -16,6 +16,7 @@ return {
             hooks = {},
             options = {
                 "-verbose",
+                "-bibtex",
                 "-file-line-error",
                 "-synctex=1",
                 "-interaction=nonstopmode",
