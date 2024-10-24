@@ -10,7 +10,7 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
-vim.api.nvim_create_autocmd({ "FileType" }, {
+vim.api.nvim_create_autocmd({"FileType"}, {
     pattern = {
         "dart",
         "javascript*", -- "javascriptreact",
@@ -29,6 +29,20 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 
 -- line wrapping
 vim.opt.wrap = false
+vim.api.nvim_create_autocmd({"FileType"}, {
+    pattern = {
+        "tex",
+        "bib",
+    },
+    callback = function()
+        vim.opt.wrap = true
+        vim.opt.linebreak = true
+        vim.opt.breakindent = true
+        vim.cmd("noremap <expr> j v:count ? 'j' : 'gj'")
+        vim.cmd("noremap <expr> k v:count ? 'k' : 'gk'")
+
+    end,
+})
 
 -- search settings
 vim.opt.ignorecase = true
