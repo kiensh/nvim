@@ -17,6 +17,7 @@ vim.api.nvim_create_autocmd({"FileType"}, {
         "typescript*", -- "typescriptreact",
         "json",
         "yaml",
+        "toml",
         "tex",
         "bib",
     },
