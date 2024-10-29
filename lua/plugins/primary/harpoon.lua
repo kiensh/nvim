@@ -9,11 +9,11 @@ return {
         KEYS.alt.m,
         KEYS.alt.n,
         KEYS.alt.p,
-        KEYS.alt.a1,
-        KEYS.alt.a2,
-        KEYS.alt.a3,
-        KEYS.alt.a4,
-        KEYS.alt.a5,
+        KEYS.alt.no1,
+        KEYS.alt.no2,
+        KEYS.alt.no3,
+        KEYS.alt.no4,
+        KEYS.alt.no5,
     },
     config = function()
         local harpoon = require("harpoon")
@@ -24,10 +24,10 @@ return {
         vim.keymap.set("n", KEYS.alt.n, function() harpoon:list():next() end)
         vim.keymap.set("n", KEYS.alt.p, function() harpoon:list():prev() end)
 
-        vim.keymap.set("n", KEYS.alt.a1, function() harpoon:list():select(1) end)
-        vim.keymap.set("n", KEYS.alt.a2, function() harpoon:list():select(2) end)
-        vim.keymap.set("n", KEYS.alt.a3, function() harpoon:list():select(3) end)
-        vim.keymap.set("n", KEYS.alt.a4, function() harpoon:list():select(4) end)
-        vim.keymap.set("n", KEYS.alt.a5, function() harpoon:list():select(5) end)
+        vim.keymap.set("n", KEYS.alt.no1, function() harpoon:list():select(1) end)
+        vim.keymap.set("n", KEYS.alt.no2, function() harpoon:list():select(2) end)
+        vim.keymap.set("n", KEYS.alt.no3, function() harpoon:list():select(3) end)
+        vim.keymap.set("n", KEYS.alt.no4, function() harpoon:list():select(4) end)
+        vim.keymap.set("n", KEYS.alt.no5, function() harpoon:list():select(5) end)
     end,
 }
