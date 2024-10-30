@@ -81,7 +81,7 @@ LIST_LSPCONFIG = {
     },
 
     dartls = {
-        enabled = false,
+        enabled = true,
         init_options = {
             onlyAnalyzeProjectsWithOpenFiles = false,
             suggestFromUnimportedLibraries = true,
