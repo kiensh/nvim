@@ -63,6 +63,14 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.keymap.set("n", KEYS.h, [[-]], opts)
         vim.keymap.set("n", KEYS.l, [[<CR>]], opts)
         vim.keymap.set("n", KEYS.tab, [[<CR>]], opts)
+        -- echo netrw#Call("NetrwTreeDir", 0) .. '/' .. netrw#Call("NetrwGetWord")
+        vim.keymap.set("n", KEYS.c.p, function()
+            -- vim.cmd([[let @+ = execute(":echo netrw#Call('NetrwTreeDir', 0) .. '/' .. netrw#Call('NetrwGetWord')")]])
+            vim.cmd([[let @+ = execute(":echon netrw#Call('NetrwTreeDir', 0)")]])
+            vim.cmd([[let @+ = @+ .. '/']])
+            vim.cmd([[let @+ = @+ .. execute(":echon netrw#Call('NetrwGetWord')")]])
+            vim.cmd([[echo 'copied path: ' .. @+]])
+        end)
     end,
 })
 
