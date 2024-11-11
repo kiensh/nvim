@@ -20,6 +20,7 @@ vim.api.nvim_create_autocmd({"FileType"}, {
         "toml",
         "tex",
         "bib",
+        "markdown",
     },
     callback = function()
         vim.opt.shiftwidth = 2
