@@ -18,7 +18,7 @@ LIST_LSPCONFIG = {
             },
         },
     },
-    jsonls = { enabled = false },
+    jsonls = { enabled = true },
     bashls = {
         enabled = MY_OS.isMac() or MY_OS.isLinux(),
         settings = {
@@ -37,7 +37,7 @@ LIST_LSPCONFIG = {
     cssls = { enabled = false },
 
     tailwindcss = { enabled = false },
-    eslint = { enabled = true },
+    eslint = { enabled = false },
     graphql = {
         enabled = false,
         filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
@@ -65,7 +65,7 @@ LIST_LSPCONFIG = {
     },
 
     omnisharp = {
-        enabled = true,
+        enabled = false,
         cmd = { "dotnet", vim.fn.stdpath("data") .. "/mason/packages/omnisharp/libexec/OmniSharp.dll" },
         enable_editorconfig_support = true,
         enable_roslyn_analyzers = true,
