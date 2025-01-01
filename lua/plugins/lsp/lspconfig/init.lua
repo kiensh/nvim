@@ -18,7 +18,7 @@ LIST_LSPCONFIG = {
             },
         },
     },
-    jsonls = { enabled = true },
+    jsonls = { enabled = false },
     bashls = {
         enabled = MY_OS.isMac() or MY_OS.isLinux(),
         settings = {
