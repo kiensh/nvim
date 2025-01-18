@@ -1,5 +1,5 @@
 local toggle_sidebar = function(sidebar)
-    if not sidebar.close({ mode = 'toggle' }) then
+    if not sidebar.close({ mode = "toggle" }) then
         vim.opt.splitright = false
         local _, win = sidebar.open()
         vim.opt.splitright = true
@@ -31,7 +31,11 @@ vim.keymap.set("n", KEYS.leader.B, dap.set_breakpoint)
 
 vim.keymap.set("n", KEYS.leader.d.r, dap.repl.toggle)
 vim.keymap.set("n", KEYS.leader.d.l, dap.run_last)
-vim.keymap.set({"n", "v"}, KEYS.leader.d.h, widgets.hover)
+vim.keymap.set({ "n", "v" }, KEYS.leader.d.h, widgets.hover)
 -- vim.keymap.set({"n", "v"}, KEYS.leader.d.p, widgets.previous)
-vim.keymap.set("n", KEYS.leader.d.f, function() toggle_sidebar(frames_sidebar) end)
-vim.keymap.set("n", KEYS.leader.d.s, function() toggle_sidebar(scopes_sidebar) end)
+vim.keymap.set("n", KEYS.leader.d.f, function()
+    toggle_sidebar(frames_sidebar)
+end)
+vim.keymap.set("n", KEYS.leader.d.s, function()
+    toggle_sidebar(scopes_sidebar)
+end)

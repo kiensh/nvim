@@ -4,7 +4,7 @@ local neovim_logo = {
     " ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║",
     " ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║",
     " ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║",
-    " ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝"
+    " ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝",
 }
 local gura1_logo = {
     "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣠⣤⣴⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣦⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ",
@@ -127,10 +127,11 @@ local function draw_minintro(buf, logo_width, logo_height)
 end
 
 local function disable_move_key(bufnr)
-  local keys = { 'w', 'f', 'b', 'h', 'j', 'k', 'l', '<Up>', '<Down>', '<Left>', '<Right>', '<LeftMouse>', '<RightMouse>' }
-  vim.tbl_map(function(k)
-    vim.keymap.set('n', k, '<Nop>', { buffer = bufnr })
-  end, keys)
+    local keys =
+        { "w", "f", "b", "h", "j", "k", "l", "<Up>", "<Down>", "<Left>", "<Right>", "<LeftMouse>", "<RightMouse>" }
+    vim.tbl_map(function(k)
+        vim.keymap.set("n", k, "<Nop>", { buffer = bufnr })
+    end, keys)
 end
 
 local function create_and_set_minintro_buf(default_buff)
@@ -203,4 +204,3 @@ if MY_OS.isWindows() then
         color = "#abcdef",
     })
 end
-

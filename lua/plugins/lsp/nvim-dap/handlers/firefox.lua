@@ -1,8 +1,5 @@
 return function(config)
-    local handle = io.popen(MY_OS.isWindows()
-        and "Get-Command firefox"
-        or "which firefox"
-    )
+    local handle = io.popen(MY_OS.isWindows() and "Get-Command firefox" or "which firefox")
     ---@cast handle -nil
     local firefox_path = handle:read("*a"):gsub("\n", "")
     handle:close()

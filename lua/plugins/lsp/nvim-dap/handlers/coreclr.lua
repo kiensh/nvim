@@ -42,7 +42,7 @@ return function(config)
                 local list_subdir = get_subdir_name(vim.fn.getcwd())
                 local proj_dll = {}
                 for _, dir in ipairs(list_subdir) do
-                    local pattern = "**/" .. dir .. "/bin/Debug/**/"..dir..".dll"
+                    local pattern = "**/" .. dir .. "/bin/Debug/**/" .. dir .. ".dll"
                     local all_dll = vim.fn.globpath(vim.fn.getcwd(), pattern, false, 1)
                     table.insert(proj_dll, all_dll[1])
                 end

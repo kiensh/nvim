@@ -28,9 +28,7 @@ return {
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
         "williamboman/mason-lspconfig.nvim",
-        LIST_LSPCONFIG["omnisharp"]
-            and "Hoffs/omnisharp-extended-lsp.nvim"
-            or nil,
+        LIST_LSPCONFIG["omnisharp"] and "Hoffs/omnisharp-extended-lsp.nvim" or nil,
     },
     config = function()
         local lspconfig = require("lspconfig")

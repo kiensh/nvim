@@ -10,7 +10,7 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
-vim.api.nvim_create_autocmd({"FileType"}, {
+vim.api.nvim_create_autocmd({ "FileType" }, {
     pattern = {
         "dart",
         "javascript*", -- "javascriptreact",
@@ -32,7 +32,7 @@ vim.api.nvim_create_autocmd({"FileType"}, {
 
 -- line wrapping
 vim.opt.wrap = false
-vim.api.nvim_create_autocmd({"FileType"}, {
+vim.api.nvim_create_autocmd({ "FileType" }, {
     pattern = {
         "tex",
         "bib",
@@ -41,9 +41,9 @@ vim.api.nvim_create_autocmd({"FileType"}, {
         vim.opt.wrap = true
         vim.opt.linebreak = true
         vim.opt.breakindent = true
-        vim.cmd("noremap <expr> j v:count ? 'j' : 'gj'")
-        vim.cmd("noremap <expr> k v:count ? 'k' : 'gk'")
-
+        local config = { silent = true, expr = true, remap = true }
+        vim.keymap.set("n", "j", "v:count ? 'j' : 'gj'", config)
+        vim.keymap.set("n", "k", "v:count ? 'k' : 'gk'", config)
     end,
 })
 
@@ -63,14 +63,14 @@ vim.opt.sidescrolloff = 80
 vim.opt.colorcolumn = "80"
 vim.opt.updatetime = 50
 vim.opt.termguicolors = true
-vim.cmd [[
+vim.cmd([[
   highlight Normal guibg=none
   highlight NonText guibg=none
   highlight NormalFloat guibg=none
   highlight Normal ctermbg=none
   highlight NonText ctermbg=none
   highlight NormalFloat ctermbg=none
-]]
+]])
 
 -- backspace
 vim.opt.backspace = "indent,eol,start"
@@ -105,8 +105,8 @@ vim.cmd("au TextYankPost * silent! lua vim.highlight.on_yank({ higroup = 'IncSea
 
 -- shell
 if MY_OS.isWindows() then
-    vim.opt.shell="pwsh"
-    vim.opt.shellcmdflag="-command"
-    vim.opt.shellquote="\""
-    vim.opt.shellxquote=""
+    vim.opt.shell = "pwsh"
+    vim.opt.shellcmdflag = "-command"
+    vim.opt.shellquote = '"'
+    vim.opt.shellxquote = ""
 end

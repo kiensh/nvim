@@ -38,7 +38,7 @@ return {
         },
         formatters = {
             latexindent = {
-                args = { "-y=defaultIndent: \"  \"" },
+                args = { "-y=defaultIndent: '  '" },
             },
         },
     },

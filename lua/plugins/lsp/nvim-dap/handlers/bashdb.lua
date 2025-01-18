@@ -17,5 +17,5 @@ return function(config)
             type = "bash",
         },
     }
-    require('mason-nvim-dap').default_setup(config)
+    require("mason-nvim-dap").default_setup(config)
 end

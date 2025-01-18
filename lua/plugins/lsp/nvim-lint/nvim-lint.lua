@@ -2,7 +2,12 @@ return {
     "mfussenegger/nvim-lint",
     dependencies = { "rshkarin/mason-nvim-lint" },
     keys = {
-        { KEYS.leader.l, function() require("lint").try_lint() end },
+        {
+            KEYS.leader.l,
+            function()
+                require("lint").try_lint()
+            end,
+        },
     },
     config = function()
         local lint = require("lint")

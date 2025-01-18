@@ -1,5 +1,5 @@
 return function(config)
-    local venv_path = os.getenv('VIRTUAL_ENV') or os.getenv('CONDA_PREFIX')
+    local venv_path = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_PREFIX")
     config.configurations = {
         {
             -- The first three options are required by nvim-dap

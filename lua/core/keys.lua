@@ -32,7 +32,6 @@ KEYS = {
         i = "gi",
         r = "gr",
         t = "gt",
-
     },
     h = "h",
     j = { k = "jk" },
@@ -55,7 +54,7 @@ KEYS.leader = {
     B = "<leader>B",
     c = {
         a = "<leader>ca",
-        h = "<leader>ch"
+        h = "<leader>ch",
     },
     d = {
         c = "<leader>dc",
@@ -101,7 +100,7 @@ KEYS.leader = {
         r = "<leader>kr",
     },
     l = "<leader>l",
-    n = { h = "<leader>nh", },
+    n = { h = "<leader>nh" },
     y = "<leader>y",
     p = "<leader>p",
     P = "<leader>P",
