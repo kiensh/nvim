@@ -41,5 +41,8 @@ return {
         follow_url_func = function(url)
             vim.fn.jobstart({ "open", url })
         end,
+        follow_img_func = function(path)
+            vim.fn.jobstart("open " .. path)
+        end,
     },
 }
