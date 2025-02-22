@@ -42,8 +42,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
         vim.opt.linebreak = true
         vim.opt.breakindent = true
         local config = { silent = true, expr = true, remap = true }
-        vim.keymap.set("n", "j", "v:count ? 'j' : 'gj'", config)
-        vim.keymap.set("n", "k", "v:count ? 'k' : 'gk'", config)
+        vim.keymap.set({ "n", "v" }, "j", "v:count ? 'j' : 'gj'", config)
+        vim.keymap.set({ "n", "v" }, "k", "v:count ? 'k' : 'gk'", config)
     end,
 })
 
