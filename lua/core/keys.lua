@@ -69,7 +69,6 @@ KEYS.leader = {
         s = "<leader>ds",
     },
     f = {
-        c = "<leader>fc",
         f = "<leader>ff",
         m = "<leader>fm",
         r = "<leader>fr",
