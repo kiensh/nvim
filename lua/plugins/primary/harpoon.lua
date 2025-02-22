@@ -1,9 +1,7 @@
 return {
     "ThePrimeagen/harpoon",
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-    },
     branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" },
     keys = {
         KEYS.alt.a,
         KEYS.alt.m,
@@ -15,9 +13,9 @@ return {
         KEYS.alt.no4,
         KEYS.alt.no5,
     },
-    config = function()
+    config = function(_, opts)
         local harpoon = require("harpoon")
-        harpoon:setup()
+        harpoon.setup(opts)
 
         vim.keymap.set("n", KEYS.alt.a, function()
             harpoon:list():add()

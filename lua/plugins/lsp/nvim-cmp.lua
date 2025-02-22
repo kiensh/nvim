@@ -12,7 +12,7 @@ end
 
 return {
     "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
+    event = {"InsertEnter", "CmdlineEnter"},
     dependencies = {
         { --- @sources
             "hrsh7th/cmp-buffer",
@@ -24,13 +24,15 @@ return {
             "L3MON4D3/LuaSnip",
             "rafamadriz/friendly-snippets",
         },
-        "onsails/lspkind.nvim",
+        "onsails/lspkind.nvim", --- @menu
+        "windwp/nvim-autopairs", --- @autopairs
     },
     config = function(_, _)
         local cmp = require("cmp")
 
         -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
         require("luasnip.loaders.from_vscode").lazy_load()
+        cmp.event:on("confirm_done", require("nvim-autopairs.completion.cmp").on_confirm_done())
 
         cmp.setup({
             completion = {
