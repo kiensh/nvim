@@ -3,10 +3,10 @@ return {
     keys = {
         { KEYS.ctrl.bslash, [[<Cmd>ToggleTerm<CR>]], mode = "n" },
         { KEYS.esc_esc, [[<C-\><C-n>]], mode = "t" },
-        { KEYS.ctrl.h, [[<Cmd>wincmd h<CR>]], mode = "t" },
+        -- { KEYS.ctrl.h, [[<Cmd>wincmd h<CR>]], mode = "t" },
         { KEYS.ctrl.j, [[<Cmd>wincmd j<CR>]], mode = "t" },
         { KEYS.ctrl.k, [[<Cmd>wincmd k<CR>]], mode = "t" },
-        { KEYS.ctrl.l, [[<Cmd>wincmd l<CR>]], mode = "t" },
+        -- { KEYS.ctrl.l, [[<Cmd>wincmd l<CR>]], mode = "t" },
         { KEYS.ctrl.q, [[<C-\><C-n><Cmd>bdelete!<CR>]], mode = "t" },
     },
     opts = {
@@ -23,7 +23,7 @@ return {
         shading_factor = 1,
         start_in_insert = true,
         persist_size = false,
-        persist_mode = true,
+        persist_mode = false,
         direction = "horizontal",
         close_on_exit = true,
         shell = vim.o.shell,
