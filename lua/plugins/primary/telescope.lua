@@ -7,7 +7,7 @@ return {
     },
     cmd = { "Telescope" },
     keys = {
-        { KEYS.leader.f.f, [[<cmd>Telescope fd hidden=true<cr>]], desc = "Fuzzy find files in cwd" },
+        { KEYS.leader.f.f, [[<cmd>Telescope fd hidden=true follow=true<cr>]], desc = "Fuzzy find files in cwd" },
         { KEYS.leader.f.r, [[<cmd>Telescope oldfiles<cr>]], desc = "Fuzzy find recent files" },
         { KEYS.leader.f.s, [[<cmd>Telescope live_grep<cr>]], desc = "Find string in cwd" },
         { KEYS.leader.f.c, [[<cmd>Telescope grep_string<cr>]], desc = "Find string under cursor in cwd" },
