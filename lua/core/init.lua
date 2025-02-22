@@ -5,16 +5,16 @@ MY_OS = {
         return MY_OS.value == "windows"
     end,
     isMac = function()
-        return MY_OS.value == "mac"
+        return vim.startswith(home, "/Users/")
     end,
     isLinux = function()
-        return MY_OS.value == "linux"
+        return vim.startswith(home, "/home/") or vim.startswith(home, "/root")
     end,
 }
-if vim.startswith(home, "/home/") then
-    MY_OS.value = "linux"
-elseif vim.startswith(home, "/Users/") then
+if MY_OS.isMac() then
     MY_OS.value = "mac"
+elseif MY_OS.isLinux() then
+    MY_OS.value = "linux"
 else
     MY_OS.value = "windows"
 end
