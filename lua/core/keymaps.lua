@@ -7,7 +7,7 @@ end
 vim.g.mapleader = KEYS.space
 vim.g.maplocalleader = vim.g.mapleader
 -- keymap("i", KEYS.j.k, [[<ESC>]])
-keymap("i", KEYS.escape, [[<ESC>]])
+-- keymap("i", KEYS.escape, [[<ESC>]])
 keymap("n", KEYS.leader.n.h, [[:nohl<CR>]])
 keymap("n", KEYS.leader.q.done, [[:bdelete!<CR>]])
 keymap("n", KEYS.Q, [[:%bd|e#<CR>]])
