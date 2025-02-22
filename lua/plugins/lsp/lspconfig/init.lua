@@ -49,7 +49,7 @@ LIST_LSPCONFIG = {
     angularls = { enabled = false },
 
     pyright = {
-        enabled = true,
+        enabled = vim.fn.executable('python') == 1,
         settings = {
             python = {
                 analysis = {
@@ -65,7 +65,7 @@ LIST_LSPCONFIG = {
     },
 
     omnisharp = {
-        enabled = false,
+        enabled = vim.fn.executable('dotnet') == 1,
         cmd = { "dotnet", vim.fn.stdpath("data") .. "/mason/packages/omnisharp/libexec/OmniSharp.dll" },
         enable_editorconfig_support = true,
         enable_roslyn_analyzers = true,
@@ -89,7 +89,7 @@ LIST_LSPCONFIG = {
     },
 
     dartls = {
-        enabled = true,
+        enabled = vim.fn.executable('dart') == 1,
         init_options = {
             onlyAnalyzeProjectsWithOpenFiles = false,
             suggestFromUnimportedLibraries = true,
