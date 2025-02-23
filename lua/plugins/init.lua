@@ -19,13 +19,14 @@ require("lazy").setup({
     {
         {
             "3rd/image.nvim",
-            opts = {},
+            build = false,
+            opts = {
+                backend = "kitty",
+                processor = "magick_cli",
+            },
         },
     },
 }, {
-    rocks = {
-        hererocks = true, -- recommended if you do not have global installation of Lua 5.1.
-    },
     checker = {
         enabled = true,
         notify = false,
