@@ -16,16 +16,6 @@ require("lazy").setup({
     { import = "plugins.colorschemes" },
     { import = "plugins.others" },
     { import = "plugins.lsp" },
-    {
-        {
-            "3rd/image.nvim",
-            build = false,
-            opts = {
-                backend = "kitty",
-                processor = "magick_cli",
-            },
-        },
-    },
 }, {
     checker = {
         enabled = true,
