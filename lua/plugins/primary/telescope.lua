@@ -10,6 +10,7 @@ return {
         { KEYS.leader.f.f, [[<cmd>Telescope find_files hidden=true follow=true<cr>]], desc = "Fuzzy find files in cwd" },
         { KEYS.leader.f.r, [[<cmd>Telescope oldfiles<cr>]], desc = "Fuzzy find recent files" },
         { KEYS.leader.f.s, [[<cmd>Telescope live_grep<cr>]], desc = "Find string in cwd" },
+        { KEYS.leader.f.b, [[<cmd>Telescope buffers<cr>]], desc = "Fuzzy find buffers" },
 
         -- telescope git commands (not on youtube nvim video)
         { KEYS.leader.g.c, [[<cmd>Telescope git_commits<cr>]] }, -- list all git commits (use <cr> to checkout) ["gc" for git commits]
