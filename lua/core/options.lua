@@ -110,3 +110,10 @@ if MY_OS.isWindows() then
     vim.opt.shellquote = '"'
     vim.opt.shellxquote = ""
 end
+
+-- vifm
+vim.filetype.add({
+    extension = {
+        ["vifm"] = "vim",
+    },
+})
