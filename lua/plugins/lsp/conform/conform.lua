@@ -31,7 +31,7 @@ return {
             markdown = { "prettier" },
             graphql = { "prettier" },
 
-            cs = { "csharpier" },
+            -- cs = { "csharpier" },
 
             tex = { "latexindent" },
             bib = { "bibtex-tidy" },
