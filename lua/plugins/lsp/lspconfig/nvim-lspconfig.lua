@@ -17,6 +17,9 @@ local codeAction = {
 }
 
 vim.diagnostic.config({
+    float = {
+        border = "rounded",
+    },
     signs = {
         text = {
             [vim.diagnostic.severity.ERROR] = " ",
@@ -44,10 +47,6 @@ return {
         lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
             on_attach = require("plugins.lsp.lspconfig.on_attach"),
             capabilities = capabilities,
-            -- handlers = {
-            --     ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
-            --     ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
-            -- },
         })
 
         for k, v in pairs(LIST_LSPCONFIG) do

@@ -33,17 +33,21 @@ return function(client, bufnr)
     opts.desc = "Smart rename"
     vim.keymap.set("n", KEYS.leader.r.n, vim.lsp.buf.rename, opts)
     opts.desc = "Show line diagnostics"
-    vim.keymap.set("n", KEYS.leader.d.i, function()
-        vim.diagnostic.open_float({
-            border = "rounded",
-        })
-    end, opts)
+    vim.keymap.set("n", KEYS.leader.d.i, vim.diagnostic.open_float, opts)
     opts.desc = "Go to previous diagnostic"
     vim.keymap.set("n", KEYS.lbracket.d, function ()
-        vim.diagnostic.jump(-1, { float = false })
+        vim.diagnostic.jump({
+            float = true,
+            count = -1,
+        })
     end, opts)
     opts.desc = "Go to next diagnostic"
-    vim.keymap.set("n", KEYS.rbracket.d, vim.diagnostic.goto_next, opts)
+    vim.keymap.set("n", KEYS.rbracket.d, function ()
+        vim.diagnostic.jump({
+            float = true,
+            count = 1,
+        })
+    end, opts)
 
     -- omnisharp_extended
     if client.name == "omnisharp" then

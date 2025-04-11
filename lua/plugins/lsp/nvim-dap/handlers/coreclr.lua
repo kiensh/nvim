@@ -64,5 +64,6 @@ return function(config)
             end,
         },
     }
+    ---@diagnostic disable-next-line: different-requires
     require("mason-nvim-dap").default_setup(config)
 end
