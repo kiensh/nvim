@@ -1,5 +1,6 @@
 return {
     "David-Kunz/gen.nvim",
+    enabled = false,
     opts = {
         model = "GandalfBaum/deepseek_r1-claude3.7:latest", -- The default model to use.
         quit_map = "q", -- set keymap to close the response window

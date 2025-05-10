@@ -29,5 +29,6 @@ return {
             ["."] = true,
         },
         copilot_node_command = "node", -- Node.js version must be > 16.x
+        copilot_model = "gpt-4o-copilot",  -- Current LSP default is gpt-35-turbo, supports gpt-4o-copilot
     },
 }
