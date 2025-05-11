@@ -10,8 +10,11 @@ return {
         -- WARNING: Since auto-suggestions are a high-frequency operation and therefore expensive,
         -- currently designating it as `copilot` provider is dangerous because: https://github.com/yetone/avante.nvim/issues/1048
         -- Of course, you can reduce the request frequency by increasing `suggestion.debounce`.
-        auto_suggestions_provider = "claude",
+        auto_suggestions_provider = "copilot",
         cursor_applying_provider = nil, -- The provider used in the applying phase of Cursor Planning Mode, defaults to nil, when nil uses Config.provider as the provider for the applying phase
+        copilot = {
+            model = "claude-3.7-sonnet-thought",
+        },
         claude = {
             endpoint = "https://api.anthropic.com",
             model = "claude-3-5-sonnet-20241022",
