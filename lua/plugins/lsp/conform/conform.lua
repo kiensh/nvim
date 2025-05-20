@@ -35,6 +35,10 @@ return {
 
             tex = { "latexindent" },
             bib = { "bibtex-tidy" },
+
+            sh = { "shfmt" },
+            bash = { "shfmt" },
+            zsh = { "shfmt" },
         },
         formatters = {
             latexindent = {
