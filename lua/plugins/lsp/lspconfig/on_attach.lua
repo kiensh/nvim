@@ -35,14 +35,14 @@ return function(client, bufnr)
     opts.desc = "Show line diagnostics"
     vim.keymap.set("n", KEYS.leader.d.i, vim.diagnostic.open_float, opts)
     opts.desc = "Go to previous diagnostic"
-    vim.keymap.set("n", KEYS.lbracket.d, function ()
+    vim.keymap.set("n", KEYS.lbracket.d, function()
         vim.diagnostic.jump({
             float = true,
             count = -1,
         })
     end, opts)
     opts.desc = "Go to next diagnostic"
-    vim.keymap.set("n", KEYS.rbracket.d, function ()
+    vim.keymap.set("n", KEYS.rbracket.d, function()
         vim.diagnostic.jump({
             float = true,
             count = 1,

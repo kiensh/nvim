@@ -23,10 +23,9 @@ return {
     config = function()
         require("lspconfig.ui.windows").default_options.border = "double"
 
-        local capabilities = require('blink.cmp').get_lsp_capabilities()
         vim.lsp.config("*", {
             on_attach = require("plugins.lsp.lspconfig.on_attach"),
-            capabilities = capabilities,
+            capabilities = require('blink.cmp').get_lsp_capabilities(),
         })
 
         for k, v in pairs(LIST_LSPCONFIG) do

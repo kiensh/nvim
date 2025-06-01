@@ -5,10 +5,22 @@ return {
         {
             KEYS.leader.f.m,
             function()
+                local range = nil
+                if vim.fn.mode() == "v" then
+                    range = {
+                        ["start"] = function()
+                            return vim.api.nvim_buf_get_mark(0, "<")
+                        end,
+                        ["end"] = function()
+                            return vim.api.nvim_buf_get_mark(0, ">")
+                        end,
+                    }
+                end
                 require("conform").format({
                     lsp_fallback = true,
                     async = true,
                     timeout_ms = 1000,
+                    range = range,
                 })
             end,
             mode = { "n", "v" },

@@ -33,7 +33,10 @@ LIST_LSPCONFIG = {
         enabled = false,
         filetypes = { "html", "typescriptreact", "javascriptreact" },
     },
-    ts_ls = { enabled = true },
+    ts_ls = {
+        enabled = true,
+        on_attach = require("plugins.lsp.lspconfig.on_attach"),
+    },
     cssls = { enabled = false },
 
     tailwindcss = { enabled = false },
@@ -49,7 +52,7 @@ LIST_LSPCONFIG = {
     angularls = { enabled = false },
 
     pyright = {
-        enabled = vim.fn.executable('python') == 1,
+        enabled = vim.fn.executable("python") == 1,
         settings = {
             python = {
                 analysis = {
@@ -65,7 +68,7 @@ LIST_LSPCONFIG = {
     },
 
     omnisharp = {
-        enabled = vim.fn.executable('dotnet') == 1,
+        enabled = vim.fn.executable("dotnet") == 1,
         cmd = { "dotnet", vim.fn.stdpath("data") .. "/mason/packages/omnisharp/libexec/OmniSharp.dll" },
         enable_editorconfig_support = true,
         enable_roslyn_analyzers = true,
@@ -89,7 +92,7 @@ LIST_LSPCONFIG = {
     },
 
     dartls = {
-        enabled = vim.fn.executable('dart') == 1,
+        enabled = vim.fn.executable("dart") == 1,
         init_options = {
             onlyAnalyzeProjectsWithOpenFiles = false,
             suggestFromUnimportedLibraries = true,

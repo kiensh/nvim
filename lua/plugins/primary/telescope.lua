@@ -1,9 +1,9 @@
 return {
     "nvim-telescope/telescope.nvim",
-    branch = "0.1.x",
     dependencies = {
-        "nvim-lua/plenary.nvim",
+        { "nvim-lua/plenary.nvim" },
         { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+        { "nvim-telescope/telescope-ui-select.nvim" },
     },
     cmd = { "Telescope" },
     keys = {
@@ -29,9 +29,9 @@ return {
             },
             mappings = {
                 i = {
-                    [KEYS.ctrl.j] = require("telescope.actions").move_selection_next,
-                    [KEYS.ctrl.k] = require("telescope.actions").move_selection_previous,
-                    [KEYS.escape] = require("telescope.actions").close,
+                    [KEYS.ctrl.j] = function(...) require("telescope.actions").move_selection_next(...) end,
+                    [KEYS.ctrl.k] = function(...) require("telescope.actions").move_selection_previous(...) end,
+                    [KEYS.escape] = function(...) require("telescope.actions").close(...) end,
                 },
             },
         },
@@ -50,5 +50,6 @@ return {
 
         telescope.setup(opts)
         telescope.load_extension("fzf")
+        telescope.load_extension("ui-select")
     end,
 }

@@ -38,12 +38,26 @@ return {
         dependencies = {
             { "zbirenbaum/copilot.lua" }, -- or zbirenbaum/copilot.lua
             { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
-            { "stevearc/dressing.nvim" },
         },
         build = "make tiktoken", -- Only on MacOS or Linux
         opts = {
             -- model = "gpt-4o",
             -- model = "claude-3.7-sonnet-thought",
+        },
+        cmd = {
+            "CopilotChat",
+            "CopilotChatToggle",
+            "CopilotChatClear",
+            "CopilotChatNext",
+            "CopilotChatPrev",
+            "CopilotChatPrompt",
+
+            "CopilotChatDocs",
+            "CopilotChatReview",
+            "CopilotChatFix",
+            "CopilotChatExplain",
+            "CopilotChatOptimize",
+            "CopilotChatTests",
         },
     },
 }
