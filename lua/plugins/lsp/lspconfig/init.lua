@@ -61,7 +61,7 @@ LIST_LSPCONFIG = {
                     useLibraryCodeForTypes = true,
                     diagnosticMode = "openFilesOnly",
                     pythonPath = vim.fn.exepath("python3"),
-                    venvPath = "/home/uit/miniconda3/envs",
+                    venvPath = vim.fn.getcwd() .. "/.venv",
                 },
             },
         },
