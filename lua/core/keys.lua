@@ -7,10 +7,12 @@ KEYS = {
     less_than = "<",
     greater_than = ">",
     rbracket = {
+        done = "]",
         d = "]d",
         h = "]h",
     },
     lbracket = {
+        done = "[",
         d = "[d",
         h = "[h",
     },
@@ -95,9 +97,12 @@ KEYS.leader = {
         D = "<leader>hD",
     },
     k = {
+        e = "<leader>ke",
         n = "<leader>kn",
+        o = "<leader>ko",
         p = "<leader>kp",
         r = "<leader>kr",
+        u = "<leader>ku",
     },
     l = "<leader>l",
     n = { h = "<leader>nh" },
