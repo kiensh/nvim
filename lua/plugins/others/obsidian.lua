@@ -10,7 +10,7 @@ return {
         workspaces = {
             { name = "notes", path = notes },
         },
-        completion = { nvim_cmp = true },
+        completion = { nvim_cmp = false },
         mappings = {
             [KEYS.g.d] = {
                 action = function()
