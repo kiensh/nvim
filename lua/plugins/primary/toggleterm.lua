@@ -23,7 +23,7 @@ return {
         shading_factor = 1,
         start_in_insert = true,
         persist_size = false,
-        persist_mode = false,
+        persist_mode = true,
         direction = "horizontal",
         close_on_exit = true,
         shell = vim.o.shell,
