@@ -5,6 +5,7 @@ return {
     priority = 1000,
     opts = {
         transparent_background = true,
+
         integrations = {
             alpha = true,
             cmp = true,
@@ -51,7 +52,15 @@ return {
                 CursorLine = { bg = colors.surface, blend = 75 },
                 StatusLine = { fg = colors.green, bg = colors.surface0 },
                 StatusLineNC = { fg = colors.surface2, bg = colors.none },
-                -- FloatTitle = { fg = colors.pink },
+                FloatTitle = { fg = colors.pink, bg = colors.none },
+                NormalFloat = { bg = colors.none },
+                FloatBorder = { bg = colors.none },
+
+                -- Telescope
+                TelescopeSelection = { bg = colors.none },
+                TelescopeNormal = { bg = colors.none },
+                TelescopeBorder = { fg = colors.blue, bg = colors.none },
+                TelescopeTitle = { fg = colors.blue, bg = colors.none },
 
                 -- NvimTree
                 -- NvimTreeStatusLineNC = { bg = colors.none },
@@ -150,3 +159,4 @@ return {
 -- 	mantle = "#292c3c",
 -- 	crust = "#232634",
 -- }
+

@@ -52,17 +52,20 @@ return {
             -- ColorColumn = { bg = "foam", blend = 0 },
 
             -- Blend colours against the "base" background
-            StatusLine = { fg = "love", bg = "love", blend = 20 },
+            StatusLine = { fg = "love", bg = "rose", blend = 20 },
             StatusLineNC = { fg = "subtle", bg = "none" },
             FloatTitle = { fg = "rose", bg = "none" },
 
             -- Telescope
-            TelescopePromptTitle = { fg = "love", bg = "none" },
-            TelescopeResultsTitle = { fg = "love", bg = "none" },
-            TelescopePreviewTitle = { fg = "love", bg = "none" },
-            TelescopeResultsNormal = { fg = "subtle", bg = "none" },
-            TelescopeSelection = { fg = "love", bg = "none" },
-            TelescopeSelectionCaret = { fg = "love", bg = "none" },
+            -- TelescopeSelection = { fg = "love", bg = "none" },
+            -- TelescopeNormal = { bg = "none" },
+            -- TelescopeBorder = { fg = "love", bg = "none" },
+            -- TelescopeTitle = { fg = "love", bg = "none" },
+            -- TelescopePromptTitle = { fg = "love", bg = "none" },
+            -- TelescopeResultsTitle = { fg = "love", bg = "none" },
+            -- TelescopePreviewTitle = { fg = "love", bg = "none" },
+            -- TelescopeResultsNormal = { fg = "subtle", bg = "none" },
+            -- TelescopeSelectionCaret = { fg = "love", bg = "none" },
 
             -- NvimTree
             -- NvimTreeNormal = { bg = "none" },
