@@ -1,6 +1,6 @@
 return {
     "lewis6991/gitsigns.nvim",
-    event = {"BufReadPre", "BufNewFile"},
+    event = { "BufReadPre", "BufNewFile" },
     opts = {
         signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
         numhl = true, -- Toggle with `:Gitsigns toggle_numhl`
@@ -8,6 +8,14 @@ return {
         word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
         watch_gitdir = {
             follow_files = true,
+        },
+        preview_config = {
+            -- Options passed to nvim_open_win
+            style = "minimal",
+            relative = "cursor",
+            row = 0,
+            col = 1,
+            border = "rounded",
         },
         on_attach = function(bufnr)
             local gs = package.loaded.gitsigns
@@ -21,14 +29,14 @@ return {
             -- Navigation
             map("n", KEYS.rbracket.h, function()
                 vim.schedule(function()
-                    gs.nav_hunk("next")
+                    gs.nav_hunk("next", { preview = true })
                 end)
                 return "<Ignore>"
             end, { expr = true })
 
             map("n", KEYS.lbracket.h, function()
                 vim.schedule(function()
-                    gs.nav_hunk("prev")
+                    gs.nav_hunk("prev", { preview = true })
                 end)
                 return "<Ignore>"
             end, { expr = true })
@@ -48,7 +56,7 @@ return {
 
             map("n", KEYS.leader.h.u, gs.undo_stage_hunk)
 
-            map("n", KEYS.leader.h.p, gs.preview_hunk_inline)
+            map("n", KEYS.leader.h.p, gs.preview_hunk)
 
             map("n", KEYS.leader.h.b, gs.blame)
 
