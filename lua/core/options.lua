@@ -34,6 +34,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 vim.opt.wrap = false
 vim.api.nvim_create_autocmd({ "FileType" }, {
     pattern = {
+        "markdown",
         "tex",
         "bib",
     },
