@@ -52,7 +52,7 @@ LIST_LSPCONFIG = {
     angularls = { enabled = false },
 
     pyright = {
-        enabled = vim.fn.executable("python") == 1,
+        enabled = vim.fn.executable("python3") == 1,
         settings = {
             python = {
                 analysis = {

@@ -1,4 +1,5 @@
 return function(client, bufnr)
+    print("LSP on_attached function started: " .. client.name)
     local opts = { noremap = true, silent = true, buffer = bufnr }
     if not client.config.single_file_support then
         vim.api.nvim_set_current_dir(client.config.root_dir)
