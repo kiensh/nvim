@@ -1,4 +1,4 @@
-vim.opt.conceallevel = 1
+vim.opt.conceallevel = 2
 vim.opt.concealcursor = "n"
 local notes = vim.fn.expand("~") .. "/Workspaces/personal/notes"
 return {

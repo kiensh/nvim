@@ -44,7 +44,7 @@ return {
         opts = {
             -- Core configuration
             system_prompt = "COPILOT_INSTRUCTIONS",
-            model = "claude-sonnet-4",
+            model = "claude-sonnet-4.5",
             agent = "copilot",
             context = nil,
             sticky = nil,
