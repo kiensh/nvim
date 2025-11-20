@@ -24,11 +24,13 @@ return {
         start_in_insert = true,
         persist_size = false,
         persist_mode = true,
-        direction = "horizontal",
+        direction =  'float', --'vertical' | 'horizontal' | 'tab' | 'float'
         close_on_exit = true,
         shell = vim.o.shell,
         float_opts = {
             border = "curved",
+            width = math.floor(vim.o.columns * 0.9),
+            height = math.floor(vim.o.lines * 0.8),
             winblend = 0,
             highlights = {
                 border = "Normal",
