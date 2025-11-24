@@ -31,6 +31,9 @@ return {
         for k, v in pairs(LIST_LSPCONFIG) do
             v.on_attach = require("plugins.lsp.lspconfig.on_attach")
             vim.lsp.config(k, v)
+            if k == "dartls" then
+                require("lspconfig").dartls.setup(v)
+            end
         end
     end,
 }

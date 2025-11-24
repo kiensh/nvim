@@ -15,7 +15,9 @@ return {
         environment_scope = "b",
         debug = true,
         global_keymaps = false,
-        kulala_keymaps = true,
+        kulala_keymaps = {
+            ["Show verbose"] = false, -- set false to disable
+        },
     },
     keys = {
         {
@@ -57,13 +59,6 @@ return {
             KEYS.leader.k.e,
             function()
                 require("kulala").set_selected_env()
-            end,
-            ft = "http",
-        },
-        {
-            KEYS.leader.k.u,
-            function()
-                require("lua.kulala.ui.auth_manager").open_auth_config()
             end,
             ft = "http",
         },

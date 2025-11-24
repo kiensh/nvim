@@ -116,6 +116,19 @@ LIST_LSPCONFIG = {
     },
 
     texlab = { enabled = true },
+
+    gopls = {
+        enabled = vim.fn.executable("go") == 1,
+        settings = {
+            gopls = {
+                analyses = {
+                    unusedparams = true,
+                    shadow = true,
+                },
+                staticcheck = true,
+            },
+        },
+    },
 }
 
 for k, v in pairs(LIST_LSPCONFIG) do
