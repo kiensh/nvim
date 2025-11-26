@@ -16,6 +16,9 @@ KEYS = {
         d = "[d",
         h = "[h",
     },
+    shift = {
+        enter = "<S-CR>",
+    },
 
     c = {
         p = "cp",
