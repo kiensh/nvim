@@ -42,7 +42,7 @@ return {
             ft = "http",
         },
         {
-            KEYS.leader.k.o,
+            KEYS.O,
             function()
                 require("kulala").open()
             end,
@@ -56,7 +56,7 @@ return {
             ft = "http",
         },
         {
-            KEYS.leader.k.e,
+            KEYS.E,
             function()
                 require("kulala").set_selected_env()
             end,

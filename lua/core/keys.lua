@@ -23,6 +23,7 @@ KEYS = {
     c = {
         p = "cp",
     },
+    E = "E",
     g = {
         b = {
             done = "gb",
@@ -44,6 +45,7 @@ KEYS = {
     l = "l",
     n = "n",
     N = "N",
+    O = "O",
     p = "p",
     q = "q",
     Q = "Q",
@@ -98,14 +100,6 @@ KEYS.leader = {
         b = "<leader>hb",
         d = "<leader>hd",
         D = "<leader>hD",
-    },
-    k = {
-        e = "<leader>ke",
-        n = "<leader>kn",
-        o = "<leader>ko",
-        p = "<leader>kp",
-        r = "<leader>kr",
-        u = "<leader>ku",
     },
     l = "<leader>l",
     n = { h = "<leader>nh" },
