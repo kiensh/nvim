@@ -7,7 +7,11 @@ return {
     },
     cmd = { "Telescope" },
     keys = {
-        { KEYS.leader.f.f, [[<cmd>Telescope find_files hidden=true follow=true<cr>]], desc = "Fuzzy find files in cwd" },
+        {
+            KEYS.leader.f.f,
+            [[<cmd>Telescope find_files hidden=true follow=true<cr>]],
+            desc = "Fuzzy find files in cwd",
+        },
         { KEYS.leader.f.r, [[<cmd>Telescope oldfiles<cr>]], desc = "Fuzzy find recent files" },
         { KEYS.leader.f.s, [[<cmd>Telescope live_grep<cr>]], desc = "Find string in cwd" },
         { KEYS.leader.f.b, [[<cmd>Telescope buffers<cr>]], desc = "Fuzzy find buffers" },
@@ -29,9 +33,15 @@ return {
             },
             mappings = {
                 i = {
-                    [KEYS.ctrl.j] = function(...) require("telescope.actions").move_selection_next(...) end,
-                    [KEYS.ctrl.k] = function(...) require("telescope.actions").move_selection_previous(...) end,
-                    [KEYS.escape] = function(...) require("telescope.actions").close(...) end,
+                    [KEYS.ctrl.j] = function(...)
+                        require("telescope.actions").move_selection_next(...)
+                    end,
+                    [KEYS.ctrl.k] = function(...)
+                        require("telescope.actions").move_selection_previous(...)
+                    end,
+                    [KEYS.escape] = function(...)
+                        require("telescope.actions").close(...)
+                    end,
                 },
             },
         },

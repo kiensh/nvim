@@ -24,7 +24,7 @@ return {
         start_in_insert = true,
         persist_size = false,
         persist_mode = true,
-        direction =  'float', --'vertical' | 'horizontal' | 'tab' | 'float'
+        direction = "float", --'vertical' | 'horizontal' | 'tab' | 'float'
         close_on_exit = true,
         shell = vim.o.shell,
         float_opts = {
