@@ -1,5 +1,5 @@
 vim.opt.conceallevel = 2
-vim.opt.concealcursor = "n"
+-- vim.opt.concealcursor = "n"
 local notes = vim.fn.expand("~") .. "/Workspaces/personal/notes"
 return {
     "epwalsh/obsidian.nvim",
