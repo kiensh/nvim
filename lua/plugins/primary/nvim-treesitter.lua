@@ -9,6 +9,7 @@ return {
             disable = { "latex" },
         },
         indent = { enable = true },
+        fold = { enable = true },
         ensure_installed = { "lua" },
         ignore_install = { "vim" },
     },

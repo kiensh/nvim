@@ -96,7 +96,8 @@ vim.opt.isfname:append("@-@")
 
 -- fold
 vim.opt.foldenable = false -- auto folden
-vim.opt.foldmethod = "indent" -- indent syntax
+vim.opt.foldmethod = "expr" -- use expression for folding
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()" -- use treesitter for folding
 
 -- netrw
 vim.g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"

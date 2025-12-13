@@ -3,9 +3,14 @@ return {
     ft = { "tex" },
     init = function()
         -- From: https://github.com/lervag/vimtex/blob/master/doc/vimtex.txt#L4671-L4713
-        vim.o.foldmethod = "expr"
-        vim.o.foldexpr = "vimtex#fold#level(v:lnum)"
-        vim.o.foldtext = "vimtex#fold#text()"
+        vim.api.nvim_create_autocmd("FileType", {
+            pattern = "tex",
+            callback = function()
+                vim.opt_local.foldmethod = "expr"
+                vim.opt_local.foldexpr = "vimtex#fold#level(v:lnum)"
+                vim.opt_local.foldtext = "vimtex#fold#text()"
+            end,
+        })
 
         vim.g.vimtex_compiler_latexmk = {
             aux_dir = "",
