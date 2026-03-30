@@ -33,6 +33,6 @@ require("lazy").setup({
     },
 })
 
-vim.cmd([[colorscheme catppuccin]])
+-- vim.cmd([[colorscheme catppuccin]])
 -- vim.cmd([[colorscheme rose-pine]])
--- vim.cmd([[colorscheme tokyonight]])
+vim.cmd([[colorscheme tokyonight]])
