@@ -55,6 +55,7 @@ vim.opt.smartcase = true
 -- cursor line
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
+-- VimLeave not working, need to find a workaround
 vim.cmd("au VimLeave * set guicursor=a:hor20-Cursor/lCursor-blinkon0")
 
 -- appearance
