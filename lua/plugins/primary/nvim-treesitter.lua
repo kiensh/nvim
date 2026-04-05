@@ -1,5 +1,6 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+    branch = 'main',
     event = { "BufReadPre", "BufNewFile" },
     build = ":TSUpdate",
     opts = {
@@ -13,7 +14,4 @@ return {
         ensure_installed = { "lua" },
         ignore_install = { "vim" },
     },
-    config = function(_, opts)
-        require("nvim-treesitter.configs").setup(opts)
-    end,
 }
