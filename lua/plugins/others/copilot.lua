@@ -31,7 +31,7 @@ return {
                 cvs = false,
             },
             copilot_node_command = "node",
-            copilot_model = "gpt-41-copilot",
+            -- copilot_model = "gpt-41-copilot",
         },
     },
     {
